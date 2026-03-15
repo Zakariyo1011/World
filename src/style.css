@@ -1,12 +1,8 @@
-/* =============================================
-   trxvl. — media.css
-   Responsive styles for index.html & mountains.html
-   Breakpoints: 1280 / 1024 / 768 / 480
-   ============================================= */
 
-/* ─────────────────────────────────────────────
+
+/* 
    1280px — Katta laptop
-───────────────────────────────────────────── */
+*/
 @media (max-width: 1280px) {
 
   /* Navbar */
@@ -71,9 +67,9 @@
 }
 
 
-/* ─────────────────────────────────────────────
+/* 
    1024px — Tablet landscape
-───────────────────────────────────────────── */
+   */
 @media (max-width: 1024px) {
 
   /* Navbar */
@@ -219,12 +215,12 @@
 }
 
 
-/* ─────────────────────────────────────────────
+/* 
    768px — Tablet portrait
-───────────────────────────────────────────── */
+*/
 @media (max-width: 768px) {
 
-  /* Navbar — hamburger yashirish (hozircha sodda) */
+  /* Navbar — hamburger yashirish (hozircha sodda)*/
   nav#navbar {
     padding-left: 20px;
     padding-right: 20px;
@@ -424,9 +420,9 @@
 }
 
 
-/* ─────────────────────────────────────────────
+/* 
    480px — Mobil
-───────────────────────────────────────────── */
+*/
 @media (max-width: 480px) {
 
   /* Navbar */
