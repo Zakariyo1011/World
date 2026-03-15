@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>trxvl. – Mountains</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="src/style.css" />
+  <style>
+    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin:0; padding:0; }
+    .search-input { background:transparent; border:none; outline:none; color:white; width:100%; font-size:14px; }
+    .search-input::placeholder { color:rgba(255,255,255,0.8); }
+    #hero-mountains {
+      min-height: 520px;
+      background-image: url('img/mountains-bar.png');
+      background-size: cover;
+      background-position: center top;
+      background-color: #6878a0;
+      display: flex;
+      flex-direction: column;
+      padding-top: 94px;
+    }
+  </style>
+</head>
+<body class="bg-white">
+
+  <!-- NAVBAR -->
+  <nav id="navbar"
+    class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between h-[94px] px-[132px] transition-all duration-300"
+    style="background:rgba(255,255,255,0.02); backdrop-filter:blur(4px);">
+    <span class="text-[35px] font-bold text-white leading-none">trxvl.</span>
+    <div class="flex items-center gap-7">
+      <a href="index.html" class="text-white text-[15px] opacity-85 hover:opacity-100 transition-opacity">Home</a>
+      <a href="#" class="text-white text-[15px] opacity-85 hover:opacity-100 transition-opacity">Stays</a>
+      <a href="#" class="text-white text-[15px] opacity-85 hover:opacity-100 transition-opacity">Flights</a>
+      <a href="#" class="text-white text-[15px] opacity-85 hover:opacity-100 transition-opacity">Packages</a>
+      <a href="#" class="text-white text-[15px] font-bold hover:opacity-80 transition-opacity">Sign Up</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div id="hero-mountains" class="relative">
+    <div style="position:absolute; inset:0; background:linear-gradient(to bottom,rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.10) 50%,rgba(0,0,0,0) 100%); pointer-events:none; z-index:0;"></div>
+
+    <!-- Title + Search -->
+    <div class="relative z-10 pt-11 px-[132px]">
+      <h1 class="text-[80px] font-bold text-white leading-none tracking-tight max-w-[780px] mb-8">
+        The whole world<br>awaits.
+      </h1>
+      <div class="flex items-center max-w-[1246px] h-[66px] rounded-[18px] pl-4 pr-2 gap-2 mb-8"
+           style="background:rgba(255,255,255,0.40); backdrop-filter:blur(35px);">
+        <div class="flex items-center gap-2 flex-[2.4] min-w-0">
+          <i class="fa-solid fa-magnifying-glass text-white opacity-80 text-[13px] flex-shrink-0"></i>
+          <input type="text" placeholder="Search destinations, hotels" class="search-input" />
+        </div>
+        <div class="w-px h-5 flex-shrink-0" style="background:rgba(255,255,255,0.4);"></div>
+        <div class="flex items-center gap-2 flex-1 min-w-0">
+          <i class="fa-regular fa-calendar text-white opacity-80 text-[13px] flex-shrink-0"></i>
+          <span class="text-white opacity-90 text-[14px] whitespace-nowrap">Check in</span>
+        </div>
+        <div class="w-px h-5 flex-shrink-0" style="background:rgba(255,255,255,0.4);"></div>
+        <div class="flex items-center gap-2 flex-1 min-w-0">
+          <i class="fa-regular fa-calendar text-white opacity-80 text-[13px] flex-shrink-0"></i>
+          <span class="text-white opacity-90 text-[14px] whitespace-nowrap">Check out</span>
+        </div>
+        <div class="w-px h-5 flex-shrink-0" style="background:rgba(255,255,255,0.4);"></div>
+        <div class="flex items-center gap-2 flex-1 min-w-0">
+          <i class="fa-regular fa-user text-white opacity-80 text-[13px] flex-shrink-0"></i>
+          <span class="text-white opacity-90 text-[14px] whitespace-nowrap">1 room, 2 adults</span>
+        </div>
+        <button class="h-12 px-7 rounded-xl bg-white text-black text-[15px] font-semibold flex-shrink-0 hover:bg-gray-100 transition-colors border-0 cursor-pointer">Search</button>
+      </div>
+    </div>
+
+    <!-- Categories -->
+    <div class="relative z-10 px-[132px] pb-10">
+      <p class="text-[28px] font-bold text-white mb-4">Top categories</p>
+      <div class="flex items-center justify-between max-w-[1246px]">
+
+        <a href="index.html" class="flex flex-col items-center gap-1.5 flex-1 no-underline group" style="cursor:pointer;">
+          <div class="w-9 h-9 flex items-center justify-center text-white opacity-60 group-hover:opacity-100 transition-opacity">
+            <i class="fa-solid fa-umbrella-beach text-2xl"></i>
+          </div>
+          <span class="text-[11px] text-white opacity-60 group-hover:opacity-100 whitespace-nowrap transition-opacity">Beaches</span>
+        </a>
+
+        <a href="index.html" class="flex flex-col items-center gap-1.5 flex-1 no-underline group" style="cursor:pointer;">
+          <div class="w-9 h-9 flex items-center justify-center text-white opacity-60 group-hover:opacity-100 transition-opacity">
+            <svg width="32" height="32" viewBox="0 0 34 34" fill="none"><path d="M17 7c0 0-7 3-7 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M17 7c0 0 7 3 7 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M10 18c0 4 3 7 7 8 4-1 7-4 7-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M5 28h24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <span class="text-[11px] text-white opacity-60 group-hover:opacity-100 whitespace-nowrap transition-opacity">Deserts</span>
+        </a>
+
+        <!-- Mountains ACTIVE -->
+        <div class="flex flex-col items-center gap-1.5 flex-1">
+          <div class="w-9 h-9 flex items-center justify-center text-white">
+            <svg width="32" height="32" viewBox="0 0 34 34" fill="none"><path d="M2 30L13 9l5 8 4-5 10 18H2Z" stroke="white" stroke-width="2.2" stroke-linejoin="round"/><path d="M13 9l-2 4 2 1 2-1-2-4Z" fill="white"/></svg>
+          </div>
+          <span class="text-[11px] text-white font-bold whitespace-nowrap" style="border-bottom:1px solid white; padding-bottom:1px;">Mountains</span>
+        </div>
+
+        <a href="#" class="flex flex-col items-center gap-1.5 flex-1 no-underline group" style="cursor:pointer;">
+          <div class="w-9 h-9 flex items-center justify-center text-white opacity-60 group-hover:opacity-100 transition-opacity">
+            <svg width="32" height="32" viewBox="0 0 34 34" fill="none"><rect x="4" y="16" width="7" height="14" stroke="currentColor" stroke-width="1.8"/><rect x="13" y="10" width="8" height="20" stroke="currentColor" stroke-width="1.8"/><rect x="23" y="18" width="7" height="12" stroke="currentColor" stroke-width="1.8"/><path d="M2 30h30" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="15" y="6" width="4" height="4" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <span class="text-[11px] text-white opacity-60 group-hover:opacity-100 whitespace-nowrap transition-opacity">Iconic Cities</span>
+        </a>
+
+        <a href="#" class="flex flex-col items-center gap-1.5 flex-1 no-underline group" style="cursor:pointer;">
+          <div class="w-9 h-9 flex items-center justify-center text-white opacity-60 group-hover:opacity-100 transition-opacity">
+            <svg width="32" height="32" viewBox="0 0 34 34" fill="none"><path d="M6 22h22l-3-8H9L6 22Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M10 14V9l7-4 7 4v5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M3 26c2-1.5 4 1 6 0s4-1 6 0 4 1 6 0 4-1 6 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <span class="text-[11px] text-white opacity-60 group-hover:opacity-100 whitespace-nowrap transition-opacity">Houseboats</span>
+        </a>
+
+        <a href="#" class="flex flex-col items-center gap-1.5 flex-1 no-underline group" style="cursor:pointer;">
+          <div class="w-9 h-9 flex items-center justify-center text-white opacity-60 group-hover:opacity-100 transition-opacity">
+            <svg width="32" height="32" viewBox="0 0 34 34" fill="none"><circle cx="17" cy="10" r="5" stroke="currentColor" stroke-width="1.8"/><path d="M17 15v14M11 22h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M3 28h28" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <span class="text-[11px] text-white opacity-60 group-hover:opacity-100 whitespace-nowrap transition-opacity">Countryside</span>
+        </a>
+
+        <a href="#" class="flex flex-col items-center gap-1.5 flex-1 no-underline group" style="cursor:pointer;">
+          <div class="w-9 h-9 flex items-center justify-center text-white opacity-60 group-hover:opacity-100 transition-opacity">
+            <svg width="32" height="32" viewBox="0 0 34 34" fill="none"><path d="M3 30L17 7l14 23H3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M13 30v-8h8v8" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="17" cy="3.5" r="2" fill="currentColor"/></svg>
+          </div>
+          <span class="text-[11px] text-white opacity-60 group-hover:opacity-100 whitespace-nowrap transition-opacity">Camping</span>
+        </a>
+
+        <a href="#" class="flex flex-col items-center gap-1.5 flex-1 no-underline group" style="cursor:pointer;">
+          <div class="w-9 h-9 flex items-center justify-center text-white opacity-60 group-hover:opacity-100 transition-opacity">
+            <svg width="32" height="32" viewBox="0 0 34 34" fill="none"><rect x="6" y="15" width="22" height="15" stroke="currentColor" stroke-width="1.8"/><path d="M6 15V8h4v4h4V8h4v4h4V8h4v7" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><rect x="13" y="21" width="8" height="9" stroke="currentColor" stroke-width="1.8"/></svg>
+          </div>
+          <span class="text-[11px] text-white opacity-60 group-hover:opacity-100 whitespace-nowrap transition-opacity">Castles</span>
+        </a>
+
+        <a href="#" class="flex flex-col items-center gap-1.5 flex-1 no-underline group" style="cursor:pointer;">
+          <div class="w-9 h-9 flex items-center justify-center text-white opacity-60 group-hover:opacity-100 transition-opacity">
+            <svg width="32" height="32" viewBox="0 0 34 34" fill="none"><circle cx="24" cy="7" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M4 28l10-13 4 5 6-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 31l30-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <span class="text-[11px] text-white opacity-60 group-hover:opacity-100 whitespace-nowrap transition-opacity">Skiing</span>
+        </a>
+
+        <a href="#" class="flex flex-col items-center gap-1.5 flex-1 no-underline group" style="cursor:pointer;">
+          <div class="w-9 h-9 flex items-center justify-center text-white opacity-60 group-hover:opacity-100 transition-opacity">
+            <svg width="32" height="32" viewBox="0 0 34 34" fill="none"><path d="M17 30V15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M17 15c0 0-8-2-10-11 5 0 10 5 10 11Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M17 21c0 0 8-2 10-11-5 0-10 5-10 11Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M5 30h24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <span class="text-[11px] text-white opacity-60 group-hover:opacity-100 whitespace-nowrap transition-opacity">Tropical</span>
+        </a>
+
+      </div>
+    </div>
+  </div>
+  <!-- END HERO -->
+
+
+  <!-- PACKAGE SECTIONS -->
+  <div class="bg-white">
+
+    <!-- ===================== POPULAR MOUNTAIN DESTINATIONS ===================== -->
+    <section class="px-[132px] pt-14 pb-12">
+      <h2 class="text-[28px] font-bold text-[#111] mb-5">Popular Mountain Destinations</h2>
+      <div class="grid grid-cols-4 gap-[26px]">
+
+        <!-- Card template: image 263px tall, card padding 17px/17px/27px/17px, radius 18px -->
+        <div class="cursor-pointer group bg-white rounded-[18px] p-[11px] hover:shadow-xl transition-shadow" style="box-shadow: 0 4.43px 17.71px rgba(158,158,158,0.25);">
+          <div class="relative h-[263px] rounded-[12px] overflow-hidden mb-3">
+            <img src="img/swisss.png" alt="Swiss Alps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#3a5a7a,#6a9aba)';this.removeAttribute('src')" />
+            <button class="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow hover:scale-110 transition-transform border-0">
+              <i class="fa-regular fa-heart text-[13px] text-gray-500"></i>
+            </button>
+          </div>
+          <div class="pt-1 px-[6px] pb-[10px]">
+            <div class="flex items-center justify-between mb-1">
+              <p class="text-[15px] font-bold text-[#111]">Swiss Alps</p>
+              <div class="flex items-center gap-1"><i class="fa-solid fa-star text-[12px] text-black-400"></i><span class="text-[13px] font-semibold">4.7</span></div>
+            </div>
+            <p class="text-[12px] text-gray-400 mb-3">3 Days 4 Nights</p>
+            <div class="flex items-center gap-4 mb-3">
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-plane text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">2 Flights</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-hotel text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">1 Hotel</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-van-shuttle text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">2 Transfers</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-person-hiking text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">4 Activities</span></div>
+            </div>
+            <ul class="mb-3 space-y-1">
+              <li class="text-[12px] text-gray-500">• Tour combo with return airport transfer</li>
+              <li class="text-[12px] text-gray-500">• City Tour</li>
+              <li class="text-[12px] text-gray-500">• Curious Corner</li>
+            </ul>
+            <div class="flex items-baseline gap-2">
+              <span class="text-[12px] text-gray-400 line-through">₹88,052</span>
+              <span class="text-[16px] font-bold text-[#111]">₹88,952</span>
+              <span class="text-[11px] text-gray-400">per person</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cursor-pointer group bg-white rounded-[18px] p-[11px] hover:shadow-xl transition-shadow" style="box-shadow: 0 4.43px 17.71px rgba(158,158,158,0.25);">
+          <div class="relative h-[263px] rounded-[12px] overflow-hidden mb-3">
+            <img src="img/hallstatt.png" alt="Hallstatt" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#2a4a6a,#4a7aaa)';this.removeAttribute('src')" />
+            <button class="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow hover:scale-110 transition-transform border-0">
+              <i class="fa-regular fa-heart text-[13px] text-gray-500"></i>
+            </button>
+          </div>
+          <div class="pt-1 px-[6px] pb-[10px]">
+            <div class="flex items-center justify-between mb-1">
+              <p class="text-[15px] font-bold text-[#111]">Hallstatt</p>
+              <div class="flex items-center gap-1"><i class="fa-solid fa-star text-[12px] text-black-400"></i><span class="text-[13px] font-semibold">4.9</span></div>
+            </div>
+            <p class="text-[12px] text-gray-400 mb-3">3 Days 4 Nights</p>
+            <div class="flex items-center gap-4 mb-3">
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-plane text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">2 Flights</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-hotel text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">1 Hotel</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-van-shuttle text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">2 Transfers</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-person-hiking text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">4 Activities</span></div>
+            </div>
+            <ul class="mb-3 space-y-1">
+              <li class="text-[12px] text-gray-500">• Tour combo with return airport transfer</li>
+              <li class="text-[12px] text-gray-500">• City Tour</li>
+              <li class="text-[12px] text-gray-500">• Curious Corner</li>
+            </ul>
+            <div class="flex items-baseline gap-2">
+              <span class="text-[12px] text-gray-400 line-through">₹88,052</span>
+              <span class="text-[16px] font-bold text-[#111]">₹88,952</span>
+              <span class="text-[11px] text-gray-400">per person</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cursor-pointer group bg-white rounded-[18px] p-[11px] hover:shadow-xl transition-shadow" style="box-shadow: 0 4.43px 17.71px rgba(158,158,158,0.25);">
+          <div class="relative h-[263px] rounded-[12px] overflow-hidden mb-3">
+            <img src="img/faroe.png" alt="Faroe Island" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#1a3a2a,#3a7a5a)';this.removeAttribute('src')" />
+            <button class="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow hover:scale-110 transition-transform border-0">
+              <i class="fa-regular fa-heart text-[13px] text-gray-500"></i>
+            </button>
+          </div>
+          <div class="pt-1 px-[6px] pb-[10px]">
+            <div class="flex items-center justify-between mb-1">
+              <p class="text-[15px] font-bold text-[#111]">Faroe Island</p>
+              <div class="flex items-center gap-1"><i class="fa-solid fa-star text-[12px] text-black-400"></i><span class="text-[13px] font-semibold">4.5</span></div>
+            </div>
+            <p class="text-[12px] text-gray-400 mb-3">3 Days 4 Nights</p>
+            <div class="flex items-center gap-4 mb-3">
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-plane text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">2 Flights</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-hotel text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">1 Hotel</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-van-shuttle text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">2 Transfers</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-person-hiking text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">4 Activities</span></div>
+            </div>
+            <ul class="mb-3 space-y-1">
+              <li class="text-[12px] text-gray-500">• Tour combo with return airport transfer</li>
+              <li class="text-[12px] text-gray-500">• City Tour</li>
+              <li class="text-[12px] text-gray-500">• Curious Corner</li>
+            </ul>
+            <div class="flex items-baseline gap-2">
+              <span class="text-[12px] text-gray-400 line-through">₹88,052</span>
+              <span class="text-[16px] font-bold text-[#111]">₹88,952</span>
+              <span class="text-[11px] text-gray-400">per person</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cursor-pointer group bg-white rounded-[18px] p-[11px] hover:shadow-xl transition-shadow" style="box-shadow: 0 4.43px 17.71px rgba(158,158,158,0.25);">
+          <div class="relative h-[263px] rounded-[12px] overflow-hidden mb-3">
+            <img src="img/innsbruck.png" alt="Innsbruck" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#3a2a1a,#7a5a3a)';this.removeAttribute('src')" />
+            <button class="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow hover:scale-110 transition-transform border-0">
+              <i class="fa-regular fa-heart text-[13px] text-gray-500"></i>
+            </button>
+          </div>
+          <div class="pt-1 px-[6px] pb-[10px]">
+            <div class="flex items-center justify-between mb-1">
+              <p class="text-[15px] font-bold text-[#111]">Innsbruck</p>
+              <div class="flex items-center gap-1"><i class="fa-solid fa-star text-[12px] text-black-400"></i><span class="text-[13px] font-semibold">4.9</span></div>
+            </div>
+            <p class="text-[12px] text-gray-400 mb-3">3 Days 4 Nights</p>
+            <div class="flex items-center gap-4 mb-3">
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-plane text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">2 Flights</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-hotel text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">1 Hotel</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-van-shuttle text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">2 Transfers</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-person-hiking text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">4 Activities</span></div>
+            </div>
+            <ul class="mb-3 space-y-1">
+              <li class="text-[12px] text-gray-500">• Tour combo with return airport transfer</li>
+              <li class="text-[12px] text-gray-500">• City Tour</li>
+              <li class="text-[12px] text-gray-500">• Curious Corner</li>
+            </ul>
+            <div class="flex items-baseline gap-2">
+              <span class="text-[12px] text-gray-400 line-through">₹88,052</span>
+              <span class="text-[16px] font-bold text-[#111]">₹88,952</span>
+              <span class="text-[11px] text-gray-400">per person</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== RECENTLY VIEWED ===================== -->
+    <section class="px-[132px] pb-12">
+  <h2 class="text-[28px] font-bold text-[#111] mb-5">Recently Viewed</h2>
+  <div class="grid grid-cols-3 gap-[26px] items-start">
+
+    <!-- Card 1: Hallstatt -->
+    <div class="cursor-pointer group bg-white rounded-[18px] p-[17px] hover:shadow-xl transition-shadow" style="box-shadow: 0 4.43px 17.71px rgba(158,158,158,0.25);">
+      <div class="relative rounded-[12px] overflow-hidden mb-[26px]" style="height:221px;">
+        <img src="img/hallstatt.png" alt="Hallstatt" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#2a4a6a,#4a7aaa)';this.removeAttribute('src')" />
+        <button class="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow border-0">
+          <i class="fa-regular fa-heart text-[13px] text-gray-500"></i>
+        </button>
+      </div>
+      <div class="flex flex-col gap-[26px]" style="min-height:318px; justify-content:space-between;">
+        <div class="flex flex-col gap-[4px]">
+          <div class="flex items-center justify-between">
+            <p style="font-size:26.57px; font-weight:400; color:#000;">Hallstatt</p>
+            <div class="flex items-center gap-1"><i class="fa-solid fa-star text-black-400" style="font-size:13px;"></i><span style="font-size:17.71px; font-weight:600;">4.9</span></div>
+          </div>
+          <p style="font-size:17.71px; color:#000; opacity:0.5;">3Days 4 Nights</p>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-plane text-gray-400" style="font-size:12px;"></i><span style="font-size:11px;" class="text-gray-400">2 Flights</span></div>
+          <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-hotel text-gray-400" style="font-size:12px;"></i><span style="font-size:11px;" class="text-gray-400">1 Hotel</span></div>
+          <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-van-shuttle text-gray-400" style="font-size:12px;"></i><span style="font-size:11px;" class="text-gray-400">2 Transfers</span></div>
+          <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-person-hiking text-gray-400" style="font-size:12px;"></i><span style="font-size:11px;" class="text-gray-400">4 Activities</span></div>
+        </div>
+        <ul class="flex flex-col gap-[4px]">
+          <li style="font-size:17.71px; color:#000; opacity:0.5;">• Tour combo with return airport transfer</li>
+          <li style="font-size:17.71px; color:#000; opacity:0.5;">• City Tour</li>
+          <li style="font-size:17.71px; color:#000; opacity:0.5;">• Curious Corner</li>
+        </ul>
+        <div class="flex items-baseline gap-2">
+          <span style="font-size:17.71px; color:#000; opacity:0.5; text-decoration:line-through;">₹88,052</span>
+          <span style="font-size:26.57px; font-weight:700; color:#000;">₹88,952</span>
+          <span style="font-size:17.71px; color:#000; opacity:0.5;">per person</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Innsbruck -->
+    <div class="cursor-pointer group bg-white rounded-[18px] p-[17px] hover:shadow-xl transition-shadow" style="box-shadow: 0 4.43px 17.71px rgba(158,158,158,0.25);">
+      <div class="relative rounded-[12px] overflow-hidden mb-[26px]" style="height:221px;">
+        <img src="img/innsbruck.png" alt="Innsbruck" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#3a2a1a,#7a5a3a)';this.removeAttribute('src')" />
+        <button class="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow border-0">
+          <i class="fa-regular fa-heart text-[13px] text-gray-500"></i>
+        </button>
+      </div>
+      <div class="flex flex-col gap-[26px]" style="min-height:318px; justify-content:space-between;">
+        <div class="flex flex-col gap-[4px]">
+          <div class="flex items-center justify-between">
+            <p style="font-size:26.57px; font-weight:400; color:#000;">Innsbruck</p>
+            <div class="flex items-center gap-1"><i class="fa-solid fa-star text-black-400" style="font-size:13px;"></i><span style="font-size:17.71px; font-weight:600;">4.9</span></div>
+          </div>
+          <p style="font-size:17.71px; color:#000; opacity:0.5;">3Days 4 Nights</p>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-plane text-gray-400" style="font-size:12px;"></i><span style="font-size:11px;" class="text-gray-400">2 Flights</span></div>
+          <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-hotel text-gray-400" style="font-size:12px;"></i><span style="font-size:11px;" class="text-gray-400">1 Hotel</span></div>
+          <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-van-shuttle text-gray-400" style="font-size:12px;"></i><span style="font-size:11px;" class="text-gray-400">2 Transfers</span></div>
+          <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-person-hiking text-gray-400" style="font-size:12px;"></i><span style="font-size:11px;" class="text-gray-400">4 Activities</span></div>
+        </div>
+        <ul class="flex flex-col gap-[4px]">
+          <li style="font-size:17.71px; color:#000; opacity:0.5;">• Tour combo with return airport transfer</li>
+          <li style="font-size:17.71px; color:#000; opacity:0.5;">• City Tour</li>
+          <li style="font-size:17.71px; color:#000; opacity:0.5;">• Curious Corner</li>
+        </ul>
+        <div class="flex items-baseline gap-2">
+          <span style="font-size:17.71px; color:#000; opacity:0.5; text-decoration:line-through;">₹88,052</span>
+          <span style="font-size:26.57px; font-weight:700; color:#000;">₹88,952</span>
+          <span style="font-size:17.71px; color:#000; opacity:0.5;">per person</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Summer Bonanza -->
+    <div class="rounded-[18px] overflow-hidden cursor-pointer relative" style="height:608px; background:#3886AB;">
+      <img src="img/mountains-bar.png" alt="bg"
+           class="absolute w-full h-full object-cover object-center"
+           onerror="this.style.display='none'" />
+      <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(56,134,171,0.6) 0%, rgba(26,90,128,0.9) 100%);"></div>
+      <div class="absolute flex flex-col gap-[26px]" style="top:60px; left:27px; right:27px;">
+        <p style="font-size:26.57px; font-weight:700; color:white;">Summer Bonanza!</p>
+        <div class="flex flex-col gap-3">
+          <p style="font-size:17.71px; color:rgba(255,255,255,0.9);">Enjoy comfortable transfers in shared coaches</p>
+          <p style="font-size:17.71px; color:rgba(255,255,255,0.9);">Choose from 5 flights per week</p>
+          <p style="font-size:17.71px; color:rgba(255,255,255,0.9);">Get a free Rapid Antigen Test at selected hotels</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- ===================== ALL INCLUSIVE PACKAGES ===================== -->
+    <section class="px-[132px] pb-12">
+      <h2 class="text-[28px] font-bold text-[#111] mb-5">All Inclusive Packages!</h2>
+      <div class="grid grid-cols-4 gap-[26px]">
+
+        <!-- All inclusive cards: image 235px tall -->
+        <div class="cursor-pointer group bg-white rounded-[18px] p-[11px] hover:shadow-xl transition-shadow" style="box-shadow: 0 4.43px 17.71px rgba(158,158,158,0.25);">
+          <div class="relative h-[235px] rounded-[12px] overflow-hidden mb-3"><img src="img/val-di-funes.png" alt="Val di Funes" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#2a4a2a,#5a8a5a)';this.removeAttribute('src')" /></div>
+          <div class="pt-1 px-[6px] pb-[10px]">
+            <div class="flex items-center justify-between mb-1"><p class="text-[15px] font-bold text-[#111]">Val di Funes</p><div class="flex items-center gap-1"><i class="fa-solid fa-star text-[12px] text-black-400"></i><span class="text-[13px] font-semibold">4.7</span></div></div>
+            <p class="text-[12px] text-gray-400 mb-2.5">3 Days 4 Nights</p>
+            <div class="flex items-center gap-3 mb-2.5">
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-plane text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">2 Flights</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-hotel text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">1 Hotel</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-van-shuttle text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">2 Transfers</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-person-hiking text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">4 Activities</span></div>
+            </div>
+            <ul class="mb-2.5 space-y-1"><li class="text-[12px] text-gray-500">• Tour combo with return airport transfer</li><li class="text-[12px] text-gray-500">• City Tour</li><li class="text-[12px] text-gray-500">• Curious Corner</li></ul>
+            <div class="flex items-baseline gap-1.5"><span class="text-[12px] text-gray-400 line-through">₹88,052</span><span class="text-[15px] font-bold text-[#111]">₹88,952</span><span class="text-[11px] text-gray-400">per person</span></div>
+          </div>
+        </div>
+
+        <div class="cursor-pointer group bg-white rounded-[18px] p-[11px] hover:shadow-xl transition-shadow" style="box-shadow: 0 4.43px 17.71px rgba(158,158,158,0.25);">
+          <div class="relative h-[235px] rounded-[12px] overflow-hidden mb-3"><img src="img/ushuaia.png" alt="Ushuaia" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#1a2a4a,#3a5a8a)';this.removeAttribute('src')" /></div>
+          <div class="pt-1 px-[6px] pb-[10px]">
+            <div class="flex items-center justify-between mb-1"><p class="text-[15px] font-bold text-[#111]">Ushuaia</p><div class="flex items-center gap-1"><i class="fa-solid fa-star text-[12px] text-black-400"></i><span class="text-[13px] font-semibold">4.9</span></div></div>
+            <p class="text-[12px] text-gray-400 mb-2.5">3 Days 4 Nights</p>
+            <div class="flex items-center gap-3 mb-2.5">
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-plane text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">2 Flights</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-hotel text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">1 Hotel</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-van-shuttle text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">2 Transfers</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-person-hiking text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">4 Activities</span></div>
+            </div>
+            <ul class="mb-2.5 space-y-1"><li class="text-[12px] text-gray-500">• Tour combo with return airport transfer</li><li class="text-[12px] text-gray-500">• City Tour</li><li class="text-[12px] text-gray-500">• Curious Corner</li></ul>
+            <div class="flex items-baseline gap-1.5"><span class="text-[12px] text-gray-400 line-through">₹88,052</span><span class="text-[15px] font-bold text-[#111]">₹88,952</span><span class="text-[11px] text-gray-400">per person</span></div>
+          </div>
+        </div>
+
+        <div class="cursor-pointer group bg-white rounded-[18px] p-[11px] hover:shadow-xl transition-shadow" style="box-shadow: 0 4.43px 17.71px rgba(158,158,158,0.25);">
+          <div class="relative h-[235px] rounded-[12px] overflow-hidden mb-3"><img src="img/berchtesgaden.png" alt="Berchtesgaden" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#3a2a1a,#7a5a2a)';this.removeAttribute('src')" /></div>
+          <div class="pt-1 px-[6px] pb-[10px]">
+            <div class="flex items-center justify-between mb-1"><p class="text-[15px] font-bold text-[#111]">Berchtesgaden</p><div class="flex items-center gap-1"><i class="fa-solid fa-star text-[12px] text-black-400"></i><span class="text-[13px] font-semibold">4.5</span></div></div>
+            <p class="text-[12px] text-gray-400 mb-2.5">3 Days 4 Nights</p>
+            <div class="flex items-center gap-3 mb-2.5">
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-plane text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">2 Flights</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-hotel text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">1 Hotel</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-van-shuttle text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">2 Transfers</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-person-hiking text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">4 Activities</span></div>
+            </div>
+            <ul class="mb-2.5 space-y-1"><li class="text-[12px] text-gray-500">• Tour combo with return airport transfer</li><li class="text-[12px] text-gray-500">• City Tour</li><li class="text-[12px] text-gray-500">• Curious Corner</li></ul>
+            <div class="flex items-baseline gap-1.5"><span class="text-[12px] text-gray-400 line-through">₹88,052</span><span class="text-[15px] font-bold text-[#111]">₹88,952</span><span class="text-[11px] text-gray-400">per person</span></div>
+          </div>
+        </div>
+
+        <div class="cursor-pointer group bg-white rounded-[18px] p-[11px] hover:shadow-xl transition-shadow" style="box-shadow: 0 4.43px 17.71px rgba(158,158,158,0.25);">
+          <div class="relative h-[235px] rounded-[12px] overflow-hidden mb-3"><img src="img/fussen.png" alt="Fussen" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#1a3a5a,#4a7aaa)';this.removeAttribute('src')" /></div>
+          <div class="pt-1 px-[6px] pb-[10px]">
+            <div class="flex items-center justify-between mb-1"><p class="text-[15px] font-bold text-[#111]">Fussen</p><div class="flex items-center gap-1"><i class="fa-solid fa-star text-[12px] text-black-400"></i><span class="text-[13px] font-semibold">4.7</span></div></div>
+            <p class="text-[12px] text-gray-400 mb-2.5">3 Days 4 Nights</p>
+            <div class="flex items-center gap-3 mb-2.5">
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-plane text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">2 Flights</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-hotel text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">1 Hotel</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-van-shuttle text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">2 Transfers</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-person-hiking text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">4 Activities</span></div>
+            </div>
+            <ul class="mb-2.5 space-y-1"><li class="text-[12px] text-gray-500">• Tour combo with return airport transfer</li><li class="text-[12px] text-gray-500">• City Tour</li><li class="text-[12px] text-gray-500">• Curious Corner</li></ul>
+            <div class="flex items-baseline gap-1.5"><span class="text-[12px] text-gray-400 line-through">₹88,052</span><span class="text-[15px] font-bold text-[#111]">₹88,952</span><span class="text-[11px] text-gray-400">per person</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== HONEYMOON FREEBIES SPECIAL ===================== -->
+    <section class="px-[132px] pb-14">
+      <h2 class="text-[28px] font-bold text-[#111] mb-5">Honeymoon Freebies Special</h2>
+      <div class="grid grid-cols-4 gap-[26px]">
+
+        <div class="cursor-pointer group bg-white rounded-[18px] p-[11px] hover:shadow-xl transition-shadow" style="box-shadow: 0 4.43px 17.71px rgba(158,158,158,0.25);">
+          <div class="relative h-[235px] rounded-[12px] overflow-hidden mb-3"><img src="img/mauritius.png" alt="Mauritius" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#2a4a6a,#6a9aba)';this.removeAttribute('src')" /></div>
+          <div class="pt-1 px-[6px] pb-[10px]">
+            <div class="flex items-center justify-between mb-1"><p class="text-[15px] font-bold text-[#111]">Mauritius</p><div class="flex items-center gap-1"><i class="fa-solid fa-star text-[12px] text-black-400"></i><span class="text-[13px] font-semibold">4.7</span></div></div>
+            <p class="text-[12px] text-gray-400 mb-2.5">3 Days 4 Nights</p>
+            <div class="flex items-center gap-3 mb-2.5">
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-plane text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">2 Flights</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-hotel text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">1 Hotel</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-van-shuttle text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">2 Transfers</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-person-hiking text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">4 Activities</span></div>
+            </div>
+            <ul class="mb-2.5 space-y-1"><li class="text-[12px] text-gray-500">• Tour combo with return airport transfer</li><li class="text-[12px] text-gray-500">• City Tour</li><li class="text-[12px] text-gray-500">• Curious Corner</li></ul>
+            <div class="flex items-baseline gap-1.5"><span class="text-[12px] text-gray-400 line-through">₹88,052</span><span class="text-[15px] font-bold text-[#111]">₹88,952</span><span class="text-[11px] text-gray-400">per person</span></div>
+          </div>
+        </div>
+
+        <div class="cursor-pointer group bg-white rounded-[18px] p-[11px] hover:shadow-xl transition-shadow" style="box-shadow: 0 4.43px 17.71px rgba(158,158,158,0.25);">
+          <div class="relative h-[235px] rounded-[12px] overflow-hidden mb-3"><img src="img/havelock.png" alt="Havelock" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#1a4a3a,#3a8a6a)';this.removeAttribute('src')" /></div>
+          <div class="pt-1 px-[6px] pb-[10px]">
+            <div class="flex items-center justify-between mb-1"><p class="text-[15px] font-bold text-[#111]">Havelock</p><div class="flex items-center gap-1"><i class="fa-solid fa-star text-[12px] text-black-400"></i><span class="text-[13px] font-semibold">4.9</span></div></div>
+            <p class="text-[12px] text-gray-400 mb-2.5">3 Days 4 Nights</p>
+            <div class="flex items-center gap-3 mb-2.5">
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-plane text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">2 Flights</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-hotel text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">1 Hotel</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-van-shuttle text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">2 Transfers</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-person-hiking text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">4 Activities</span></div>
+            </div>
+            <ul class="mb-2.5 space-y-1"><li class="text-[12px] text-gray-500">• Tour combo with return airport transfer</li><li class="text-[12px] text-gray-500">• City Tour</li><li class="text-[12px] text-gray-500">• Curious Corner</li></ul>
+            <div class="flex items-baseline gap-1.5"><span class="text-[12px] text-gray-400 line-through">₹88,052</span><span class="text-[15px] font-bold text-[#111]">₹88,952</span><span class="text-[11px] text-gray-400">per person</span></div>
+          </div>
+        </div>
+
+        <div class="cursor-pointer group bg-white rounded-[18px] p-[11px] hover:shadow-xl transition-shadow" style="box-shadow: 0 4.43px 17.71px rgba(158,158,158,0.25);">
+          <div class="relative h-[235px] rounded-[12px] overflow-hidden mb-3"><img src="img/whitsunday.png" alt="Whitsunday Islands" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#1a3a5a,#3a7aaa)';this.removeAttribute('src')" /></div>
+          <div class="pt-1 px-[6px] pb-[10px]">
+            <div class="flex items-center justify-between mb-1"><p class="text-[15px] font-bold text-[#111]">Whitsunday Islands</p><div class="flex items-center gap-1"><i class="fa-solid fa-star text-[12px] text-black-400"></i><span class="text-[13px] font-semibold">4.5</span></div></div>
+            <p class="text-[12px] text-gray-400 mb-2.5">3 Days 4 Nights</p>
+            <div class="flex items-center gap-3 mb-2.5">
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-plane text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">2 Flights</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-hotel text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">1 Hotel</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-van-shuttle text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">2 Transfers</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-person-hiking text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">4 Activities</span></div>
+            </div>
+            <ul class="mb-2.5 space-y-1"><li class="text-[12px] text-gray-500">• Tour combo with return airport transfer</li><li class="text-[12px] text-gray-500">• City Tour</li><li class="text-[12px] text-gray-500">• Curious Corner</li></ul>
+            <div class="flex items-baseline gap-1.5"><span class="text-[12px] text-gray-400 line-through">₹88,052</span><span class="text-[15px] font-bold text-[#111]">₹88,952</span><span class="text-[11px] text-gray-400">per person</span></div>
+          </div>
+        </div>
+
+        <div class="cursor-pointer group bg-white rounded-[18px] p-[11px] hover:shadow-xl transition-shadow" style="box-shadow: 0 4.43px 17.71px rgba(158,158,158,0.25);">
+          <div class="relative h-[235px] rounded-[12px] overflow-hidden mb-3"><img src="img/maldives.png" alt="Maldives" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#1a4a4a,#3a8a8a)';this.removeAttribute('src')" /></div>
+          <div class="pt-1 px-[6px] pb-[10px]">
+            <div class="flex items-center justify-between mb-1"><p class="text-[15px] font-bold text-[#111]">Maldives</p><div class="flex items-center gap-1"><i class="fa-solid fa-star text-[12px] text-black-400"></i><span class="text-[13px] font-semibold">4.7</span></div></div>
+            <p class="text-[12px] text-gray-400 mb-2.5">3 Days 4 Nights</p>
+            <div class="flex items-center gap-3 mb-2.5">
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-plane text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">2 Flights</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-hotel text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">1 Hotel</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-van-shuttle text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">2 Transfers</span></div>
+              <div class="flex flex-col items-center gap-0.5"><i class="fa-solid fa-person-hiking text-[11px] text-gray-400"></i><span class="text-[10px] text-gray-400">4 Activities</span></div>
+            </div>
+            <ul class="mb-2.5 space-y-1"><li class="text-[12px] text-gray-500">• Tour combo with return airport transfer</li><li class="text-[12px] text-gray-500">• City Tour</li><li class="text-[12px] text-gray-500">• Curious Corner</li></ul>
+            <div class="flex items-baseline gap-1.5"><span class="text-[12px] text-gray-400 line-through">₹88,052</span><span class="text-[15px] font-bold text-[#111]">₹88,952</span><span class="text-[11px] text-gray-400">per person</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#111] text-white px-[132px] py-[52px]">
+  <div class="flex items-start gap-16">
+    <div class="min-w-[160px]">
+      <p class="text-[28px] font-bold text-white">Trxvl.</p>
+    </div>
+    <div class="flex flex-1 justify-between">
+      <div class="flex flex-col gap-[16px]">
+        <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Seslendirme ve Alt Jazz</p>
+        <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Media Market</p>
+        <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Gillie</p>
+        <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Size Last</p>
+        <button class="text-[13px] text-[#808080] px-[16px] py-[10px] cursor-pointer hover:text-white transition-colors w-fit mt-2"
+                style="border: 1px solid #808080; background: transparent; border-radius: 4px;">
+          Helmet KOD
+        </button>
+        <p class="text-[12px] text-[#808080]">© 1997-2021 Netflix, Inc.</p>
+      </div>
+      <div class="flex flex-col gap-[16px]">
+        <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Self Betimes</p>
+        <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Yatırımcı İlişkileri</p>
+        <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Basal Himmler</p>
+      </div>
+      <div class="flex flex-col gap-[16px]">
+        <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Yard Market</p>
+        <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Is İmkanları</p>
+        <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Car Tercihleri</p>
+      </div>
+      <div class="flex flex-col justify-between">
+        <div class="flex flex-col gap-[16px]">
+          <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Hedge Karla</p>
+          <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Mullein Koşulları</p>
+          <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Autumnal Bulgier</p>
+        </div>
+        <div class="flex items-center gap-[22px] mt-4">
+          <a href="#" class="text-[#808080] hover:text-white transition-colors"><i class="fa-brands fa-facebook text-[22px]"></i></a>
+          <a href="#" class="text-[#808080] hover:text-white transition-colors"><i class="fa-brands fa-instagram text-[22px]"></i></a>
+          <a href="#" class="text-[#808080] hover:text-white transition-colors"><i class="fa-brands fa-twitter text-[22px]"></i></a>
+          <a href="#" class="text-[#808080] hover:text-white transition-colors"><i class="fa-brands fa-youtube text-[22px]"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

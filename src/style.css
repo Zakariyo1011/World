@@ -1,0 +1,588 @@
+/* =============================================
+   trxvl. — media.css
+   Responsive styles for index.html & mountains.html
+   Breakpoints: 1280 / 1024 / 768 / 480
+   ============================================= */
+
+/* ─────────────────────────────────────────────
+   1280px — Katta laptop
+───────────────────────────────────────────── */
+@media (max-width: 1280px) {
+
+  /* Navbar */
+  nav#navbar {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  /* Hero */
+  #hero,
+  #hero-mountains {
+    padding-left: 0;
+  }
+
+  .pt-11.px-\[132px\],
+  .relative.z-10.pt-11.px-\[132px\] {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  /* Hero title */
+  h1.text-\[80px\] {
+    font-size: 60px;
+  }
+
+  /* Sections padding */
+  section.px-\[132px\],
+  div.px-\[132px\],
+  footer.px-\[132px\],
+  nav.px-\[132px\] {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  section.px-\[120px\] {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  /* Cards grid gap */
+  .grid.grid-cols-4 {
+    gap: 16px;
+  }
+
+  .grid.grid-cols-3 {
+    gap: 16px;
+  }
+
+  /* Plan trip section */
+  .px-\[88px\] {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  h2.text-\[62px\] {
+    font-size: 48px;
+  }
+
+  p.text-\[35px\] {
+    font-size: 26px;
+  }
+}
+
+
+/* ─────────────────────────────────────────────
+   1024px — Tablet landscape
+───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+
+  /* Navbar */
+  nav#navbar {
+    padding-left: 32px;
+    padding-right: 32px;
+    height: 70px;
+  }
+
+  nav#navbar .text-\[35px\] {
+    font-size: 26px;
+  }
+
+  nav#navbar .text-\[15px\] {
+    font-size: 13px;
+  }
+
+  nav#navbar .flex.items-center.gap-7,
+  nav#navbar .flex.items-center.gap-8 {
+    gap: 20px;
+  }
+
+  /* Hero */
+  #hero {
+    min-height: 700px;
+    padding-top: 70px;
+  }
+
+  #hero-mountains {
+    padding-top: 70px;
+  }
+
+  h1.text-\[80px\] {
+    font-size: 48px;
+    max-width: 100%;
+  }
+
+  /* Search bar */
+  .h-\[66px\] {
+    height: 54px;
+  }
+
+  /* Section padding */
+  section.px-\[132px\],
+  div.px-\[132px\],
+  footer.px-\[132px\] {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  section.px-\[120px\] {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .relative.z-10.pt-11.px-\[132px\],
+  .pt-11.px-\[132px\] {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .relative.z-10.px-\[132px\],
+  .px-\[132px\].pb-10 {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  /* Cards: 4 col → 2 col */
+  .grid.grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  /* Cards: 3 col → 2 col */
+  .grid.grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  /* Offers: 2 col → 1 col */
+  .grid.grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Community: 4 col → 2 col */
+  .grid.grid-cols-4.gap-6 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Plan trip */
+  .px-\[88px\] {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  h2.text-\[62px\] {
+    font-size: 38px;
+  }
+
+  p.text-\[35px\] {
+    font-size: 20px;
+  }
+
+  /* App download section */
+  section .flex.items-end.gap-16 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    padding-bottom: 40px;
+  }
+
+  /* Footer */
+  footer .flex.items-start.gap-16 {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  footer .flex.flex-1.justify-between {
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  /* Hero carousel cards */
+  .carousel-track .flex-shrink-0 {
+    width: 260px !important;
+    height: 180px !important;
+  }
+
+  /* Property track cards */
+  #propertyTrack .flex-shrink-0 {
+    width: calc((100vw - 64px) / 2) !important;
+  }
+
+  /* Summer Bonanza card height */
+  .grid.grid-cols-3 .rounded-\[18px\].overflow-hidden[style*="height:608px"] {
+    height: 400px !important;
+  }
+
+  /* Plan trip height */
+  .relative.rounded-\[26px\] {
+    height: 320px !important;
+  }
+}
+
+
+/* ─────────────────────────────────────────────
+   768px — Tablet portrait
+───────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* Navbar — hamburger yashirish (hozircha sodda) */
+  nav#navbar {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 64px;
+  }
+
+  nav#navbar .flex.items-center.gap-7,
+  nav#navbar .flex.items-center.gap-8 {
+    display: none;
+  }
+
+  /* Hero */
+  #hero {
+    min-height: 580px;
+    padding-top: 64px;
+  }
+
+  #hero-mountains {
+    padding-top: 64px;
+    min-height: 420px;
+  }
+
+  h1.text-\[80px\] {
+    font-size: 36px;
+  }
+
+  /* Search bar — stack */
+  .flex.items-center.max-w-\[1246px\].h-\[66px\] {
+    flex-direction: column;
+    height: auto;
+    padding: 12px;
+    gap: 10px;
+    border-radius: 16px;
+  }
+
+  .flex.items-center.max-w-\[1246px\].h-\[66px\] .w-px {
+    display: none;
+  }
+
+  .flex.items-center.max-w-\[1246px\].h-\[66px\] > div {
+    width: 100%;
+    padding-left: 8px;
+  }
+
+  .flex.items-center.max-w-\[1246px\].h-\[66px\] button {
+    width: 100%;
+    height: 44px;
+    border-radius: 12px;
+  }
+
+  /* Section padding */
+  section.px-\[132px\],
+  div.px-\[132px\],
+  footer.px-\[132px\] {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  section.px-\[120px\] {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .relative.z-10.pt-11.px-\[132px\],
+  .pt-11.px-\[132px\] {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 24px;
+  }
+
+  .relative.z-10.px-\[132px\],
+  .px-\[132px\].pb-10 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Top categories — scroll */
+  .flex.items-center.justify-between.max-w-\[1246px\] {
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 20px;
+    padding-bottom: 8px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .flex.items-center.justify-between.max-w-\[1246px\]::-webkit-scrollbar {
+    display: none;
+  }
+
+  .flex.items-center.justify-between.max-w-\[1246px\] > * {
+    flex: 0 0 auto;
+  }
+
+  /* Section headings */
+  h2.text-\[28px\],
+  h2.text-\[34px\] {
+    font-size: 22px;
+  }
+
+  /* Cards: all → 1 col */
+  .grid.grid-cols-4,
+  .grid.grid-cols-3,
+  .grid.grid-cols-2 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Community 4 col → 1 col */
+  .grid.grid-cols-4.gap-6 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Offers card — column */
+  .flex.rounded-\[20px\].bg-white.overflow-hidden {
+    flex-direction: column;
+    height: auto !important;
+  }
+
+  .flex.rounded-\[20px\].bg-white.overflow-hidden .p-5 img {
+    width: 100% !important;
+    height: 200px !important;
+  }
+
+  /* Plan trip */
+  .relative.rounded-\[26px\] {
+    height: 260px !important;
+  }
+
+  .px-\[88px\] {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  h2.text-\[62px\] {
+    font-size: 28px;
+  }
+
+  p.text-\[35px\] {
+    font-size: 16px;
+  }
+
+  /* App section */
+  section .flex.items-end.gap-16 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 32px 20px;
+  }
+
+  section .flex.items-end.gap-16 h2.text-\[48px\] {
+    font-size: 28px;
+  }
+
+  /* Phone mockup */
+  .flex-shrink-0.w-\[220px\] {
+    width: 160px !important;
+  }
+
+  /* App store buttons */
+  section .flex.items-center.gap-4.flex-shrink-0 {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* Footer */
+  footer .flex.items-start.gap-16 {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  footer .flex.flex-1.justify-between {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* Summer Bonanza */
+  .grid.grid-cols-3 .rounded-\[18px\].overflow-hidden[style*="height:608px"] {
+    height: 300px !important;
+  }
+
+  /* Property track */
+  #propertyTrack .flex-shrink-0 {
+    width: calc(100vw - 40px) !important;
+  }
+
+  /* Carousel cards */
+  .carousel-track .flex-shrink-0 {
+    width: 220px !important;
+    height: 150px !important;
+  }
+
+  /* mountains hero title */
+  #hero-mountains h1 {
+    font-size: 36px;
+  }
+}
+
+
+/* ─────────────────────────────────────────────
+   480px — Mobil
+───────────────────────────────────────────── */
+@media (max-width: 480px) {
+
+  /* Navbar */
+  nav#navbar {
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 58px;
+  }
+
+  nav#navbar .text-\[35px\] {
+    font-size: 22px;
+  }
+
+  /* Hero */
+  #hero {
+    min-height: 480px;
+    padding-top: 58px;
+  }
+
+  #hero-mountains {
+    padding-top: 58px;
+    min-height: 360px;
+  }
+
+  h1.text-\[80px\],
+  #hero-mountains h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  /* Section padding */
+  section.px-\[132px\],
+  div.px-\[132px\],
+  footer.px-\[132px\],
+  section.px-\[120px\] {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .relative.z-10.pt-11.px-\[132px\],
+  .pt-11.px-\[132px\],
+  .relative.z-10.px-\[132px\],
+  .px-\[132px\].pb-10 {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 20px;
+  }
+
+  /* Search bar */
+  .flex.items-center.max-w-\[1246px\].h-\[66px\] {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  /* Section headings */
+  h2.text-\[28px\],
+  h2.text-\[34px\] {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+
+  /* Cards */
+  .grid.grid-cols-4,
+  .grid.grid-cols-3,
+  .grid.grid-cols-2,
+  .grid.grid-cols-4.gap-6 {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* Card image heights */
+  .relative.h-\[263px\].rounded-\[12px\] {
+    height: 200px !important;
+  }
+
+  .relative.h-\[235px\].rounded-\[12px\] {
+    height: 180px !important;
+  }
+
+  /* Recently Viewed image */
+  .relative.rounded-\[12px\].overflow-hidden[style*="height:221px"] {
+    height: 180px !important;
+  }
+
+  /* Summer Bonanza */
+  .rounded-\[18px\].overflow-hidden[style*="height:608px"] {
+    height: 260px !important;
+  }
+
+  /* Top categories font */
+  .text-\[11px\].text-white {
+    font-size: 10px;
+  }
+
+  /* Plan trip */
+  .relative.rounded-\[26px\] {
+    height: 200px !important;
+  }
+
+  h2.text-\[62px\] {
+    font-size: 22px;
+  }
+
+  p.text-\[35px\] {
+    font-size: 14px;
+  }
+
+  .px-\[88px\] {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* App section */
+  section .flex.items-end.gap-16 h2.text-\[48px\] {
+    font-size: 24px;
+  }
+
+  .flex-shrink-0.w-\[220px\] {
+    width: 130px !important;
+  }
+
+  /* Offers card image */
+  .flex.rounded-\[20px\].bg-white.overflow-hidden .p-5 img {
+    height: 160px !important;
+  }
+
+  /* Footer */
+  footer {
+    padding: 32px 16px;
+  }
+
+  footer .text-\[28px\] {
+    font-size: 22px;
+  }
+
+  /* Carousel cards */
+  .carousel-track .flex-shrink-0 {
+    width: 180px !important;
+    height: 130px !important;
+  }
+
+  #propertyTrack .flex-shrink-0 {
+    width: calc(100vw - 32px) !important;
+  }
+
+  /* Recently Viewed card content font */
+  [style*="font-size:26.57px"] {
+    font-size: 18px !important;
+  }
+
+  [style*="font-size:17.71px"] {
+    font-size: 13px !important;
+  }
+
+  /* Card min-height reset */
+  [style*="min-height:318px"] {
+    min-height: unset !important;
+  }
+}

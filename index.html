@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>trxvl.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="src/style.css" />
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #hero {
+      min-height: 932px;
+      background-image: url('img/hero-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-color: #3a6650;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .search-input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: white;
+      width: 100%;
+      font-size: 14px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .search-input::placeholder {
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .carousel-wrapper {
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+      cursor: grab;
+    }
+    .carousel-wrapper:active {
+      cursor: grabbing;
+    }
+    .carousel-track {
+      display: flex;
+      gap: 18px;
+      width: max-content;
+      will-change: transform;
+    }
+  </style>
+</head>
+<body class="bg-white">
+
+  <!-- NAVBAR -->
+  <nav id="navbar"
+    class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between h-[94px] px-[132px] transition-all duration-300"
+    style="background: rgba(255,255,255,0.02); backdrop-filter: blur(4px);">
+    <span class="text-[35px] font-bold text-white leading-none tracking-tight">trxvl.</span>
+    <div class="flex items-center gap-8">
+      <a href="index.html" class="text-white text-[15px] font-bold border-b-2 border-white pb-[2px] no-underline">Home</a>
+      <a href="#" class="text-white text-[15px] opacity-80 hover:opacity-100 transition-opacity no-underline">Stays</a>
+      <a href="#" class="text-white text-[15px] opacity-80 hover:opacity-100 transition-opacity no-underline">Flights</a>
+      <a href="#" class="text-white text-[15px] opacity-80 hover:opacity-100 transition-opacity no-underline">Packages</a>
+      <a href="#" class="text-white text-[15px] font-bold hover:opacity-80 transition-opacity no-underline">Sign Up</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div id="hero">
+
+    <!-- Dark overlay -->
+    <div class="absolute inset-0 pointer-events-none z-0"
+         style="background: linear-gradient(to bottom, rgba(0,0,0,0.38) 0%, rgba(0,0,0,0.18) 55%, rgba(0,0,0,0.28) 100%);"></div>
+
+    <!-- Hero content -->
+    <div class="relative z-10 flex flex-col flex-1" style="padding-top: 94px;">
+
+      <!-- Title + Search -->
+      <div class="pt-11 px-[132px]">
+        <h1 class="text-[80px] font-bold text-white leading-none tracking-tight max-w-[780px] mb-8">
+          The whole world<br>awaits.
+        </h1>
+
+        <!-- Search bar -->
+        <div class="flex items-center max-w-[1246px] h-[66px] rounded-[18px] pl-5 pr-2 gap-3 mb-8"
+             style="background: rgba(255,255,255,0.22); backdrop-filter: blur(35px); border: 1px solid rgba(255,255,255,0.20);">
+
+          <div class="flex items-center gap-2.5 flex-[2.5] min-w-0">
+            <i class="fa-solid fa-magnifying-glass text-white text-[13px] flex-shrink-0" style="opacity:0.85;"></i>
+            <input type="text" placeholder="Search destinations, hotels" class="search-input" />
+          </div>
+
+          <div class="w-px h-5 flex-shrink-0" style="background: rgba(255,255,255,0.35);"></div>
+
+          <div class="flex items-center gap-2 flex-1 min-w-0 pl-2">
+            <i class="fa-regular fa-calendar text-white text-[13px] flex-shrink-0" style="opacity:0.85;"></i>
+            <span class="text-white text-[14px] whitespace-nowrap" style="opacity:0.9;">Check in</span>
+          </div>
+
+          <div class="w-px h-5 flex-shrink-0" style="background: rgba(255,255,255,0.35);"></div>
+
+          <div class="flex items-center gap-2 flex-1 min-w-0 pl-2">
+            <i class="fa-regular fa-calendar text-white text-[13px] flex-shrink-0" style="opacity:0.85;"></i>
+            <span class="text-white text-[14px] whitespace-nowrap" style="opacity:0.9;">Check out</span>
+          </div>
+
+          <div class="w-px h-5 flex-shrink-0" style="background: rgba(255,255,255,0.35);"></div>
+
+          <div class="flex items-center gap-2 flex-1 min-w-0 pl-2">
+            <i class="fa-regular fa-user text-white text-[13px] flex-shrink-0" style="opacity:0.85;"></i>
+            <span class="text-white text-[14px] whitespace-nowrap" style="opacity:0.9;">1 room, 2 adults</span>
+          </div>
+
+          <button onclick="handleSearch()"
+            class="h-12 px-8 rounded-[12px] bg-white text-black text-[15px] font-semibold flex-shrink-0 hover:bg-gray-100 transition-colors">
+            Search
+          </button>
+        </div>
+      </div>
+
+      <!-- Top Categories -->
+      <div class="px-[132px] pb-7">
+        <p class="text-[28px] font-bold text-white mb-5">Top categories</p>
+        <div class="flex items-center justify-between max-w-[1246px]">
+
+          <a href="#" class="flex flex-col items-center gap-1.5 flex-1 no-underline group" onclick="navigate(event,'beaches')">
+            <div class="w-9 h-9 flex items-center justify-center text-white opacity-60 group-hover:opacity-100 transition-opacity">
+              <i class="fa-solid fa-umbrella-beach text-[22px]"></i>
+            </div>
+            <span class="text-[11px] text-white opacity-60 group-hover:opacity-100 whitespace-nowrap transition-opacity">Beaches</span>
+          </a>
+
+          <a href="#" class="flex flex-col items-center gap-1.5 flex-1 no-underline group" onclick="navigate(event,'deserts')">
+            <div class="w-9 h-9 flex items-center justify-center text-white opacity-60 group-hover:opacity-100 transition-opacity">
+              <svg width="28" height="28" viewBox="0 0 34 34" fill="none">
+                <path d="M17 7c0 0-7 3-7 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M17 7c0 0 7 3 7 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M10 18c0 4 3 7 7 8 4-1 7-4 7-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M5 28h24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="text-[11px] text-white opacity-60 group-hover:opacity-100 whitespace-nowrap transition-opacity">Deserts</span>
+          </a>
+
+          <a href="mountains.html" class="flex flex-col items-center gap-1.5 flex-1 no-underline">
+            <div class="w-9 h-9 flex items-center justify-center text-white">
+              <svg width="28" height="28" viewBox="0 0 34 34" fill="none">
+                <path d="M2 30L13 9l5 8 4-5 10 18H2Z" stroke="white" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M13 9l-2 4 2 1 2-1-2-4Z" fill="white"/>
+              </svg>
+            </div>
+            <span class="text-[11px] text-white font-semibold whitespace-nowrap">Mountains</span>
+          </a>
+
+          <a href="#" class="flex flex-col items-center gap-1.5 flex-1 no-underline group" onclick="navigate(event,'iconic-cities')">
+            <div class="w-9 h-9 flex items-center justify-center text-white opacity-60 group-hover:opacity-100 transition-opacity">
+              <svg width="28" height="28" viewBox="0 0 34 34" fill="none">
+                <rect x="4" y="16" width="7" height="14" stroke="currentColor" stroke-width="1.8"/>
+                <rect x="13" y="10" width="8" height="20" stroke="currentColor" stroke-width="1.8"/>
+                <rect x="23" y="18" width="7" height="12" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M2 30h30" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <rect x="15" y="6" width="4" height="4" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <span class="text-[11px] text-white opacity-60 group-hover:opacity-100 whitespace-nowrap transition-opacity">Iconic Cities</span>
+          </a>
+
+          <a href="#" class="flex flex-col items-center gap-1.5 flex-1 no-underline group" onclick="navigate(event,'houseboats')">
+            <div class="w-9 h-9 flex items-center justify-center text-white opacity-60 group-hover:opacity-100 transition-opacity">
+              <svg width="28" height="28" viewBox="0 0 34 34" fill="none">
+                <path d="M6 22h22l-3-8H9L6 22Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M10 14V9l7-4 7 4v5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M3 26c2-1.5 4 1 6 0s4-1 6 0 4 1 6 0 4-1 6 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="text-[11px] text-white opacity-60 group-hover:opacity-100 whitespace-nowrap transition-opacity">Houseboats</span>
+          </a>
+
+          <a href="#" class="flex flex-col items-center gap-1.5 flex-1 no-underline group" onclick="navigate(event,'countryside')">
+            <div class="w-9 h-9 flex items-center justify-center text-white opacity-60 group-hover:opacity-100 transition-opacity">
+              <svg width="28" height="28" viewBox="0 0 34 34" fill="none">
+                <circle cx="17" cy="10" r="5" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M17 15v14M11 22h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M3 28h28" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="text-[11px] text-white opacity-60 group-hover:opacity-100 whitespace-nowrap transition-opacity">Countryside</span>
+          </a>
+
+          <a href="#" class="flex flex-col items-center gap-1.5 flex-1 no-underline group" onclick="navigate(event,'camping')">
+            <div class="w-9 h-9 flex items-center justify-center text-white opacity-60 group-hover:opacity-100 transition-opacity">
+              <svg width="28" height="28" viewBox="0 0 34 34" fill="none">
+                <path d="M3 30L17 7l14 23H3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M13 30v-8h8v8" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <circle cx="17" cy="3.5" r="2" fill="currentColor"/>
+              </svg>
+            </div>
+            <span class="text-[11px] text-white opacity-60 group-hover:opacity-100 whitespace-nowrap transition-opacity">Camping</span>
+          </a>
+
+          <a href="#" class="flex flex-col items-center gap-1.5 flex-1 no-underline group" onclick="navigate(event,'castles')">
+            <div class="w-9 h-9 flex items-center justify-center text-white opacity-60 group-hover:opacity-100 transition-opacity">
+              <svg width="28" height="28" viewBox="0 0 34 34" fill="none">
+                <rect x="6" y="15" width="22" height="15" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M6 15V8h4v4h4V8h4v4h4V8h4v7" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <rect x="13" y="21" width="8" height="9" stroke="currentColor" stroke-width="1.8"/>
+              </svg>
+            </div>
+            <span class="text-[11px] text-white opacity-60 group-hover:opacity-100 whitespace-nowrap transition-opacity">Castles</span>
+          </a>
+
+          <a href="#" class="flex flex-col items-center gap-1.5 flex-1 no-underline group" onclick="navigate(event,'skiing')">
+            <div class="w-9 h-9 flex items-center justify-center text-white opacity-60 group-hover:opacity-100 transition-opacity">
+              <svg width="28" height="28" viewBox="0 0 34 34" fill="none">
+                <circle cx="24" cy="7" r="3" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M4 28l10-13 4 5 6-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 31l30-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="text-[11px] text-white opacity-60 group-hover:opacity-100 whitespace-nowrap transition-opacity">Skiing</span>
+          </a>
+
+          <a href="#" class="flex flex-col items-center gap-1.5 flex-1 no-underline group" onclick="navigate(event,'tropical')">
+            <div class="w-9 h-9 flex items-center justify-center text-white opacity-60 group-hover:opacity-100 transition-opacity">
+              <svg width="28" height="28" viewBox="0 0 34 34" fill="none">
+                <path d="M17 30V15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M17 15c0 0-8-2-10-11 5 0 10 5 10 11Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M17 21c0 0 8-2 10-11-5 0-10 5-10 11Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M5 30h24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="text-[11px] text-white opacity-60 group-hover:opacity-100 whitespace-nowrap transition-opacity">Tropical</span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Top Vacation Destinations heading -->
+      <div class="px-[132px] pb-4 mt-auto">
+        <h2 class="text-[28px] font-bold text-white">Top Vacation Destinations</h2>
+      </div>
+
+      <!-- Carousel -->
+      <div class="pb-8 relative z-30">
+        <div class="carousel-wrapper w-full" id="destWrapper">
+          <div class="carousel-track" id="carouselTrack">
+            <!-- Set 1 -->
+            <div class="flex-shrink-0 w-[343px] h-[221px] rounded-[14px] overflow-hidden relative group ml-[132px]">
+              <img src="img/bali.png" alt="Bali" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.parentElement.style.background='linear-gradient(135deg,#1e4030,#3a7050)';this.remove()" />
+              <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.65),rgba(0,0,0,0.08) 55%,transparent)"></div>
+              <span class="absolute bottom-3.5 left-4 text-white text-[16px] font-bold z-10">Bali, Indonesia</span>
+            </div>
+            <div class="flex-shrink-0 w-[343px] h-[221px] rounded-[14px] overflow-hidden relative group">
+              <img src="img/kerry.png" alt="Kerry" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a2e42,#2a4a6a)';this.remove()" />
+              <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.65),rgba(0,0,0,0.08) 55%,transparent)"></div>
+              <span class="absolute bottom-3.5 left-4 text-white text-[16px] font-bold z-10">Kerry, Ireland</span>
+            </div>
+            <div class="flex-shrink-0 w-[343px] h-[221px] rounded-[14px] overflow-hidden relative group">
+              <img src="img/sydney.png" alt="Sydney" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.parentElement.style.background='linear-gradient(135deg,#3a1a50,#6a3080)';this.remove()" />
+              <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.65),rgba(0,0,0,0.08) 55%,transparent)"></div>
+              <span class="absolute bottom-3.5 left-4 text-white text-[16px] font-bold z-10">Sydney, Australia</span>
+            </div>
+            <div class="flex-shrink-0 w-[343px] h-[221px] rounded-[14px] overflow-hidden relative group">
+              <img src="img/paris.png" alt="Paris" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.parentElement.style.background='linear-gradient(135deg,#2a2a18,#505030)';this.remove()" />
+              <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.65),rgba(0,0,0,0.08) 55%,transparent)"></div>
+              <span class="absolute bottom-3.5 left-4 text-white text-[16px] font-bold z-10">Paris, France</span>
+            </div>
+            <div class="flex-shrink-0 w-[343px] h-[221px] rounded-[14px] overflow-hidden relative group ml-[132px]">
+              <img src="img/bali.png" alt="Bali" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.parentElement.style.background='linear-gradient(135deg,#1e4030,#3a7050)';this.remove()" />
+              <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.65),rgba(0,0,0,0.08) 55%,transparent)"></div>
+              <span class="absolute bottom-3.5 left-4 text-white text-[16px] font-bold z-10">Bali, Indonesia</span>
+            </div>
+            <div class="flex-shrink-0 w-[343px] h-[221px] rounded-[14px] overflow-hidden relative group">
+              <img src="img/kerry.png" alt="Kerry" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a2e42,#2a4a6a)';this.remove()" />
+              <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.65),rgba(0,0,0,0.08) 55%,transparent)"></div>
+              <span class="absolute bottom-3.5 left-4 text-white text-[16px] font-bold z-10">Kerry, Ireland</span>
+            </div>
+            <div class="flex-shrink-0 w-[343px] h-[221px] rounded-[14px] overflow-hidden relative group">
+              <img src="img/sydney.png" alt="Sydney" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.parentElement.style.background='linear-gradient(135deg,#3a1a50,#6a3080)';this.remove()" />
+              <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.65),rgba(0,0,0,0.08) 55%,transparent)"></div>
+              <span class="absolute bottom-3.5 left-4 text-white text-[16px] font-bold z-10">Sydney, Australia</span>
+            </div>
+            <div class="flex-shrink-0 w-[343px] h-[221px] rounded-[14px] overflow-hidden relative group">
+              <img src="img/paris.png" alt="Paris" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.parentElement.style.background='linear-gradient(135deg,#2a2a18,#505030)';this.remove()" />
+              <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.65),rgba(0,0,0,0.08) 55%,transparent)"></div>
+              <span class="absolute bottom-3.5 left-4 text-white text-[16px] font-bold z-10">Paris, France</span>
+            </div>
+            <!-- Set 2  -->
+            <div class="flex-shrink-0 w-[343px] h-[221px] rounded-[14px] overflow-hidden relative group">
+              <img src="img/bali.png" alt="Bali" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.parentElement.style.background='linear-gradient(135deg,#1e4030,#3a7050)';this.remove()" />
+              <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.65),rgba(0,0,0,0.08) 55%,transparent)"></div>
+              <span class="absolute bottom-3.5 left-4 text-white text-[16px] font-bold z-10">Bali, Indonesia</span>
+            </div>
+            <div class="flex-shrink-0 w-[343px] h-[221px] rounded-[14px] overflow-hidden relative group">
+              <img src="img/kerry.png" alt="Kerry" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a2e42,#2a4a6a)';this.remove()" />
+              <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.65),rgba(0,0,0,0.08) 55%,transparent)"></div>
+              <span class="absolute bottom-3.5 left-4 text-white text-[16px] font-bold z-10">Kerry, Ireland</span>
+            </div>
+            <div class="flex-shrink-0 w-[343px] h-[221px] rounded-[14px] overflow-hidden relative group">
+              <img src="img/sydney.png" alt="Sydney" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.parentElement.style.background='linear-gradient(135deg,#3a1a50,#6a3080)';this.remove()" />
+              <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.65),rgba(0,0,0,0.08) 55%,transparent)"></div>
+              <span class="absolute bottom-3.5 left-4 text-white text-[16px] font-bold z-10">Sydney, Australia</span>
+            </div>
+            <div class="flex-shrink-0 w-[343px] h-[221px] rounded-[14px] overflow-hidden relative group">
+              <img src="img/paris.png" alt="Paris" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.parentElement.style.background='linear-gradient(135deg,#2a2a18,#505030)';this.remove()" />
+              <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.65),rgba(0,0,0,0.08) 55%,transparent)"></div>
+              <span class="absolute bottom-3.5 left-4 text-white text-[16px] font-bold z-10">Paris, France</span>
+            </div>
+            <div class="flex-shrink-0 w-[343px] h-[221px] rounded-[14px] overflow-hidden relative group ml-[132px]">
+              <img src="img/bali.png" alt="Bali" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.parentElement.style.background='linear-gradient(135deg,#1e4030,#3a7050)';this.remove()" />
+              <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.65),rgba(0,0,0,0.08) 55%,transparent)"></div>
+              <span class="absolute bottom-3.5 left-4 text-white text-[16px] font-bold z-10">Bali, Indonesia</span>
+            </div>
+            <div class="flex-shrink-0 w-[343px] h-[221px] rounded-[14px] overflow-hidden relative group">
+              <img src="img/kerry.png" alt="Kerry" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a2e42,#2a4a6a)';this.remove()" />
+              <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.65),rgba(0,0,0,0.08) 55%,transparent)"></div>
+              <span class="absolute bottom-3.5 left-4 text-white text-[16px] font-bold z-10">Kerry, Ireland</span>
+            </div>
+            <div class="flex-shrink-0 w-[343px] h-[221px] rounded-[14px] overflow-hidden relative group">
+              <img src="img/sydney.png" alt="Sydney" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.parentElement.style.background='linear-gradient(135deg,#3a1a50,#6a3080)';this.remove()" />
+              <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.65),rgba(0,0,0,0.08) 55%,transparent)"></div>
+              <span class="absolute bottom-3.5 left-4 text-white text-[16px] font-bold z-10">Sydney, Australia</span>
+            </div>
+            <div class="flex-shrink-0 w-[343px] h-[221px] rounded-[14px] overflow-hidden relative group">
+              <img src="img/paris.png" alt="Paris" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.parentElement.style.background='linear-gradient(135deg,#2a2a18,#505030)';this.remove()" />
+              <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.65),rgba(0,0,0,0.08) 55%,transparent)"></div>
+              <span class="absolute bottom-3.5 left-4 text-white text-[16px] font-bold z-10">Paris, France</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end hero content -->
+
+    <!-- White fade at bottom — sits BEHIND carousel cards -->
+    <div class="absolute bottom-0 left-0 right-0 pointer-events-none z-0"
+         style="height: 300px; background: linear-gradient(to bottom, transparent 0%, white 60%);"></div>
+
+  </div><!-- END HERO -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <!--   OFFERS   -->
+  <section class="bg-white px-[120px] pt-12 pb-20">
+    <h2 class="text-[34px] font-bold text-[#111] mb-6">Offers</h2>
+    <div class="grid grid-cols-2 gap-[30px]">
+
+      <div class="flex rounded-[20px] bg-white overflow-hidden" style="height:280px; box-shadow:0 4px 18px rgba(158,158,158,0.25);">
+        <div class="p-5 flex-shrink-0">
+          <img src="img/flight.png" alt="Flight" class="h-full w-[240px] object-cover rounded-[14px]"
+               onerror="this.style.cssText='height:100%;width:240px;object-fit:cover;border-radius:14px;background:linear-gradient(135deg,#1a3a5a,#2a6a9a)';this.removeAttribute('src')" />
+        </div>
+        <div class="flex flex-col justify-between flex-1 py-8 pr-8">
+          <div>
+            <p class="text-[13px] text-gray-400 mb-2">Domestic Flights</p>
+            <h3 class="text-[22px] font-bold text-[#111] mb-2 leading-snug">Huge savings on flight with trxvl.</h3>
+            <p class="text-[15px] text-gray-500">Book domestic flights starting @ just ₹1459</p>
+          </div>
+          <button class="self-start bg-[#1a6fdb] text-white text-[15px] font-semibold px-6 py-3 rounded-full hover:bg-blue-700 transition-colors border-0 cursor-pointer">Book Now</button>
+        </div>
+      </div>
+
+      <div class="flex rounded-[20px] bg-white overflow-hidden" style="height:280px; box-shadow:0 4px 18px rgba(158,158,158,0.25);">
+        <div class="p-5 flex-shrink-0">
+          <img src="img/hotel.png" alt="Hotel" class="h-full w-[240px] object-cover rounded-[14px]"
+               onerror="this.style.cssText='height:100%;width:240px;object-fit:cover;border-radius:14px;background:linear-gradient(135deg,#0a4a6a,#1a8aaa)';this.removeAttribute('src')" />
+        </div>
+        <div class="flex flex-col justify-between flex-1 py-8 pr-8">
+          <div>
+            <p class="text-[13px] text-gray-400 mb-2">International Hotels</p>
+            <h3 class="text-[22px] font-bold text-[#111] mb-2 leading-snug">Enjoy upto 20% off on International Hotels</h3>
+            <p class="text-[15px] text-gray-500">Make the most of this deal by booking with trxvl.</p>
+          </div>
+          <button class="self-start bg-[#1a6fdb] text-white text-[15px] font-semibold px-6 py-3 rounded-full hover:bg-blue-700 transition-colors border-0 cursor-pointer">Book Now</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- BROWSE BY PROPERTY TYPE -->
+  <section class="bg-white px-[132px] pb-16">
+  <h2 class="text-[28px] font-bold text-[#111] mb-5">Browse by property type</h2>
+  <div id="propertyWrapper" class="overflow-hidden" style="cursor:grab; user-select:none;">
+    <div id="propertyTrack" class="flex gap-[18px]" style="will-change:transform;">
+
+      <!--   8 ta karta  -->
+      <div class="relative flex-shrink-0 rounded-[14px] overflow-hidden group" style="width:calc((100vw - 264px) / 4); height:160px;">
+        <img src="img/hotels.png" alt="Hotels" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#2a3a4a,#4a6a8a)';this.removeAttribute('src')" />
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.6),transparent)"></div>
+        <span class="absolute bottom-3 left-3 text-white text-[15px] font-bold">Hotels</span>
+      </div>
+      <div class="relative flex-shrink-0 rounded-[14px] overflow-hidden group" style="width:calc((100vw - 264px) / 4); height:160px;">
+        <img src="img/apartments.png" alt="Apartments" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#3a4a2a,#6a8a4a)';this.removeAttribute('src')" />
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.6),transparent)"></div>
+        <span class="absolute bottom-3 left-3 text-white text-[15px] font-bold">Apartments</span>
+      </div>
+      <div class="relative flex-shrink-0 rounded-[14px] overflow-hidden group" style="width:calc((100vw - 264px) / 4); height:160px;">
+        <img src="img/resorts.png" alt="Resorts" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#1a4a3a,#3a8a6a)';this.removeAttribute('src')" />
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.6),transparent)"></div>
+        <span class="absolute bottom-3 left-3 text-white text-[15px] font-bold">Resorts</span>
+      </div>
+      <div class="relative flex-shrink-0 rounded-[14px] overflow-hidden group" style="width:calc((100vw - 264px) / 4); height:160px;">
+        <img src="img/villas.png" alt="Villas" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#4a3a1a,#8a6a3a)';this.removeAttribute('src')" />
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.6),transparent)"></div>
+        <span class="absolute bottom-3 left-3 text-white text-[15px] font-bold">Villas</span>
+      </div>
+      <div class="relative flex-shrink-0 rounded-[14px] overflow-hidden group" style="width:calc((100vw - 264px) / 4); height:160px;">
+        <img src="img/hotels.png" alt="Hostels" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#2a3a4a,#4a6a8a)';this.removeAttribute('src')" />
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.6),transparent)"></div>
+        <span class="absolute bottom-3 left-3 text-white text-[15px] font-bold">Hostels</span>
+      </div>
+      <div class="relative flex-shrink-0 rounded-[14px] overflow-hidden group" style="width:calc((100vw - 264px) / 4); height:160px;">
+        <img src="img/apartments.png" alt="Cottages" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#4a2a3a,#8a4a6a)';this.removeAttribute('src')" />
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.6),transparent)"></div>
+        <span class="absolute bottom-3 left-3 text-white text-[15px] font-bold">Cottages</span>
+      </div>
+      <div class="relative flex-shrink-0 rounded-[14px] overflow-hidden group" style="width:calc((100vw - 264px) / 4); height:160px;">
+        <img src="img/resorts.png" alt="Lodges" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#2a1a4a,#6a3a8a)';this.removeAttribute('src')" />
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.6),transparent)"></div>
+        <span class="absolute bottom-3 left-3 text-white text-[15px] font-bold">Lodges</span>
+      </div>
+      <div class="relative flex-shrink-0 rounded-[14px] overflow-hidden group" style="width:calc((100vw - 264px) / 4); height:160px;">
+        <img src="img/villas.png" alt="Glamping" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#1a3a2a,#3a7a5a)';this.removeAttribute('src')" />
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.6),transparent)"></div>
+        <span class="absolute bottom-3 left-3 text-white text-[15px] font-bold">Glamping</span>
+      </div>
+
+      <!-- ===== CLONE (infinite loop uchun) ===== -->
+      <div class="relative flex-shrink-0 rounded-[14px] overflow-hidden group" style="width:calc((100vw - 264px) / 4); height:160px;">
+        <img src="img/hotels.png" alt="Hotels" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#2a3a4a,#4a6a8a)';this.removeAttribute('src')" />
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.6),transparent)"></div>
+        <span class="absolute bottom-3 left-3 text-white text-[15px] font-bold">Hotels</span>
+      </div>
+      <div class="relative flex-shrink-0 rounded-[14px] overflow-hidden group" style="width:calc((100vw - 264px) / 4); height:160px;">
+        <img src="img/apartments.png" alt="Apartments" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#3a4a2a,#6a8a4a)';this.removeAttribute('src')" />
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.6),transparent)"></div>
+        <span class="absolute bottom-3 left-3 text-white text-[15px] font-bold">Apartments</span>
+      </div>
+      <div class="relative flex-shrink-0 rounded-[14px] overflow-hidden group" style="width:calc((100vw - 264px) / 4); height:160px;">
+        <img src="img/resorts.png" alt="Resorts" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#1a4a3a,#3a8a6a)';this.removeAttribute('src')" />
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.6),transparent)"></div>
+        <span class="absolute bottom-3 left-3 text-white text-[15px] font-bold">Resorts</span>
+      </div>
+      <div class="relative flex-shrink-0 rounded-[14px] overflow-hidden group" style="width:calc((100vw - 264px) / 4); height:160px;">
+        <img src="img/villas.png" alt="Villas" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#4a3a1a,#8a6a3a)';this.removeAttribute('src')" />
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.6),transparent)"></div>
+        <span class="absolute bottom-3 left-3 text-white text-[15px] font-bold">Villas</span>
+      </div>
+      <div class="relative flex-shrink-0 rounded-[14px] overflow-hidden group" style="width:calc((100vw - 264px) / 4); height:160px;">
+        <img src="img/hotels.png" alt="Hostels" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#2a3a4a,#4a6a8a)';this.removeAttribute('src')" />
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.6),transparent)"></div>
+        <span class="absolute bottom-3 left-3 text-white text-[15px] font-bold">Hostels</span>
+      </div>
+      <div class="relative flex-shrink-0 rounded-[14px] overflow-hidden group" style="width:calc((100vw - 264px) / 4); height:160px;">
+        <img src="img/apartments.png" alt="Cottages" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#4a2a3a,#8a4a6a)';this.removeAttribute('src')" />
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.6),transparent)"></div>
+        <span class="absolute bottom-3 left-3 text-white text-[15px] font-bold">Cottages</span>
+      </div>
+      <div class="relative flex-shrink-0 rounded-[14px] overflow-hidden group" style="width:calc((100vw - 264px) / 4); height:160px;">
+        <img src="img/resorts.png" alt="Lodges" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#2a1a4a,#6a3a8a)';this.removeAttribute('src')" />
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.6),transparent)"></div>
+        <span class="absolute bottom-3 left-3 text-white text-[15px] font-bold">Lodges</span>
+      </div>
+      <div class="relative flex-shrink-0 rounded-[14px] overflow-hidden group" style="width:calc((100vw - 264px) / 4); height:160px;">
+        <img src="img/villas.png" alt="Glamping" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#1a3a2a,#3a7a5a)';this.removeAttribute('src')" />
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.6),transparent)"></div>
+        <span class="absolute bottom-3 left-3 text-white text-[15px] font-bold">Glamping</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- PLAN YOUR TRIP-->
+  <section class="px-[132px] pb-16">
+    <div class="relative rounded-[26px] overflow-hidden" style="height:437px;">
+      <img src="img/plan-trip.png" alt="Plan trip" class="absolute inset-0 w-full h-full object-cover"
+           onerror="this.style.background='linear-gradient(135deg,#2a3a2a,#4a6a4a)';this.removeAttribute('src')" />
+      <div class="absolute inset-0 bg-black/35"></div>
+      <div class="relative z-10 h-full flex flex-col justify-center px-[88px]">
+        <h2 class="text-[62px] font-bold text-white mb-4 max-w-[760px] leading-tight">Plan your trip with travel expert</h2>
+        <p class="text-white/90 text-[35px]">Our professional advisors can craft your perfect itinerary</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- COMMUNITY-->
+  <section class="bg-white px-[132px] pb-16">
+    <h2 class="text-[34px] font-bold text-[#111] mb-6">Connect with other travelers in our community</h2>
+    <div class="grid grid-cols-4 gap-6">
+
+      <div class="cursor-pointer group bg-white rounded-[20px] p-3" style="box-shadow:0 4px 20px rgba(158,158,158,0.2);">
+        <div class="h-[220px] rounded-[14px] overflow-hidden mb-3.5">
+          <img src="img/com-india.jpg" alt="India" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#2a3a5a,#4a6aaa)';this.removeAttribute('src')" />
+        </div>
+        <p class="text-[17px] font-bold text-[#111] px-1">India</p>
+        <p class="text-[14px] text-gray-400 px-1">Travel community</p>
+        <p class="text-[14px] text-gray-400 px-1 pb-1.5">155,073 travelers</p>
+      </div>
+
+      <div class="cursor-pointer group bg-white rounded-[20px] p-3" style="box-shadow:0 4px 20px rgba(158,158,158,0.2);">
+        <div class="h-[220px] rounded-[14px] overflow-hidden mb-3.5">
+          <img src="img/com-traveltalk.jpg" alt="Travel Talk" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#3a2a1a,#7a5a3a)';this.removeAttribute('src')" />
+        </div>
+        <p class="text-[17px] font-bold text-[#111] px-1">Travel Talk</p>
+        <p class="text-[14px] text-gray-400 px-1">Travel community</p>
+        <p class="text-[14px] text-gray-400 px-1 pb-1.5">155,073 travelers</p>
+      </div>
+
+      <div class="cursor-pointer group bg-white rounded-[20px] p-3" style="box-shadow:0 4px 20px rgba(158,158,158,0.2);">
+        <div class="h-[220px] rounded-[14px] overflow-hidden mb-3.5">
+          <img src="img/com-beach.jpg" alt="Beach" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#1a3a5a,#3a7a9a)';this.removeAttribute('src')" />
+        </div>
+        <p class="text-[17px] font-bold text-[#111] px-1">Beach</p>
+        <p class="text-[14px] text-gray-400 px-1">Travel community</p>
+        <p class="text-[14px] text-gray-400 px-1 pb-1.5">155,073 travelers</p>
+      </div>
+
+      <div class="cursor-pointer group bg-white rounded-[20px] p-3" style="box-shadow:0 4px 20px rgba(158,158,158,0.2);">
+        <div class="h-[220px] rounded-[14px] overflow-hidden mb-3.5">
+          <img src="img/com-mountains.jpg" alt="Mountains" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.background='linear-gradient(135deg,#3a4a5a,#6a8aaa)';this.removeAttribute('src')" />
+        </div>
+        <p class="text-[17px] font-bold text-[#111] px-1">Mountains</p>
+        <p class="text-[14px] text-gray-400 px-1">Travel community</p>
+        <p class="text-[14px] text-gray-400 px-1 pb-1.5">155,073 travelers</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- APP DOWNLOAD -->
+  <section class="relative overflow-hidden" style="background:linear-gradient(135deg,#1a2a3a 0%,#2a4a6a 40%,#3a5a7a 70%,#4a6a8a 100%);">
+  <!-- Background image -->
+  <img src="img/appback.png" alt="" class="absolute inset-0 w-full h-full object-cover opacity-60" />
+  
+  <div class="relative px-[132px] py-16 flex items-end gap-16">
+    
+    <!-- Chap: Telefon mockup + shadow -->
+    <!-- Chap: Telefon mockup + shadow -->
+<div class="flex-shrink-0 w-[220px] self-end relative">
+  <img src="img/shadow.png" alt="" class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[110%]" style="z-index:0;" />
+  <img src="img/main.png" alt="" class="relative w-full" style="z-index:1;" />
+</div>
+
+    <!-- O'rta: Matn + Input -->
+    <div class="flex-1 pb-8">
+      <h2 class="text-[48px] font-bold text-white mb-4 leading-tight" style="font-family:Helvetica,sans-serif;">
+        Your all-in-one travel app.
+      </h2>
+      <p class="text-white/80 text-[15px] mb-8 max-w-[500px] leading-relaxed">
+        Book flights, hotels, trains &amp; rental cars anywhere in the world in just seconds.
+        Get real-time flight updates, travel info, exclusive deals, and 30% more Trip Coins only on the app!
+      </p>
+
+      <!-- Mobile / Email tabs -->
+      <div class="flex gap-2 mb-3">
+        <button class="bg-white text-black text-[13px] font-semibold px-6 py-2 rounded-full border-0 cursor-pointer">Mobile</button>
+        <button class="bg-transparent text-white text-[13px] px-6 py-2 rounded-full cursor-pointer hover:bg-white/10 transition-colors" style="border:1px solid rgba(255,255,255,0.4);">Email</button>
+      </div>
+      <p class="text-white/60 text-[12px] mb-3">Enter your phone number to receive a text with a link to download the app.</p>
+
+      <!-- Input row -->
+      <div class="flex items-center gap-2" style="max-width:420px;">
+        <div class="flex items-center gap-2 flex-1 rounded-full px-4 py-3" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);">
+          <span class="text-white/70 text-[13px] flex-shrink-0">+91</span>
+          <div class="w-px h-4 flex-shrink-0" style="background:rgba(255,255,255,0.3);"></div>
+          <input type="tel" placeholder="Mobile number"
+                 class="bg-transparent border-none outline-none text-[13px] w-full placeholder-white/40"
+                 style="color:white;" />
+        </div>
+        <button class="bg-white text-black text-[13px] font-semibold px-6 py-3 rounded-full border-0 cursor-pointer hover:bg-gray-100 transition-colors flex-shrink-0">
+          Search
+        </button>
+      </div>
+    </div>
+
+    <!-- O'ng: "or" + App Store tugmalari -->
+    <div class="flex items-center gap-4 flex-shrink-0 pb-8">
+      <div class="flex flex-col items-center gap-1">
+        <div class="w-px flex-1" style="background:rgba(255,255,255,0.3);min-height:60px;"></div>
+        <span class="text-white/60 text-[12px]">or</span>
+        <div class="w-px flex-1" style="background:rgba(255,255,255,0.3);min-height:60px;"></div>
+      </div>
+      <div class="flex flex-col gap-3">
+        <!-- Google Play -->
+        <a href="#">
+          <img src="img/googleplay.png" alt="Get it on Google Play" class="h-[58px] w-auto hover:opacity-90 transition-opacity" />
+        </a>
+        <!-- App Store -->
+        <a href="#">
+          <img src="img/appstore.png" alt="Download on the App Store" class="h-[58px] w-auto hover:opacity-90 transition-opacity" />
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- FOOTER-->
+ <footer class="bg-[#111] text-white px-[132px] py-[52px]">
+
+  <div class="flex items-start gap-16">
+
+    <!-- Logo -->
+    <div class="min-w-[160px]">
+      <p class="text-[28px] font-bold text-white">Trxvl.</p>
+    </div>
+
+    <!-- Kolonnalar -->
+    <div class="flex flex-1 justify-between">
+
+      <!-- Column 1 + Helmet KOD + copyright -->
+      <div class="flex flex-col gap-[16px]">
+        <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Seslendirme ve Alt Jazz</p>
+        <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Media Market</p>
+        <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Gillie</p>
+        <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Size Last</p>
+        <button class="text-[13px] text-[#808080] px-[16px] py-[10px] cursor-pointer hover:text-white transition-colors w-fit mt-2"
+                style="border: 1px solid #808080; background: transparent; border-radius: 4px;">
+          Helmet KOD
+        </button>
+        <p class="text-[12px] text-[#808080]">© 1997-2021 Netflix, Inc. {i-062d573a0ee099242}</p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="flex flex-col gap-[16px]">
+        <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Self Betimes</p>
+        <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Yatırımcı İlişkileri</p>
+        <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Basal Himmler</p>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="flex flex-col gap-[16px]">
+        <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Yard Market</p>
+        <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Is İmkanları</p>
+        <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Car Tercihleri</p>
+      </div>
+
+      <!-- Column 4 + Social ikonlar -->
+      <div class="flex flex-col justify-between">
+        <div class="flex flex-col gap-[16px]">
+          <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Hedge Karla</p>
+          <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Mullein Koşulları</p>
+          <p class="text-[13px] text-[#808080] cursor-pointer hover:text-white transition-colors">Autumnal Bulgier</p>
+        </div>
+        <!-- Social ikonlar pastda -->
+        <div class="flex items-center gap-[22px] mt-4">
+          <a href="#" class="text-[#808080] hover:text-white transition-colors">
+            <i class="fa-brands fa-facebook text-[22px]"></i>
+          </a>
+          <a href="#" class="text-[#808080] hover:text-white transition-colors">
+            <i class="fa-brands fa-instagram text-[22px]"></i>
+          </a>
+          <a href="#" class="text-[#808080] hover:text-white transition-colors">
+            <i class="fa-brands fa-twitter text-[22px]"></i>
+          </a>
+          <a href="#" class="text-[#808080] hover:text-white transition-colors">
+            <i class="fa-brands fa-youtube text-[22px]"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</footer>
+  <script src="main.js"></script>
+</body>
+</html>
