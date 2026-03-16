@@ -1,584 +1,650 @@
 
 
-/* 
-   1280px — Katta laptop
-*/
-@media (max-width: 1280px) {
-
-  /* Navbar */
-  nav#navbar {
-    padding-left: 60px;
-    padding-right: 60px;
-  }
-
-  /* Hero */
-  #hero,
-  #hero-mountains {
-    padding-left: 0;
-  }
-
-  .pt-11.px-\[132px\],
-  .relative.z-10.pt-11.px-\[132px\] {
-    padding-left: 60px;
-    padding-right: 60px;
-  }
-
-  /* Hero title */
-  h1.text-\[80px\] {
-    font-size: 60px;
-  }
-
-  /* Sections padding */
-  section.px-\[132px\],
-  div.px-\[132px\],
-  footer.px-\[132px\],
-  nav.px-\[132px\] {
-    padding-left: 60px;
-    padding-right: 60px;
-  }
-
-  section.px-\[120px\] {
-    padding-left: 60px;
-    padding-right: 60px;
-  }
-
-  /* Cards grid gap */
-  .grid.grid-cols-4 {
-    gap: 16px;
-  }
-
-  .grid.grid-cols-3 {
-    gap: 16px;
-  }
-
-  /* Plan trip section */
-  .px-\[88px\] {
-    padding-left: 48px;
-    padding-right: 48px;
-  }
-
-  h2.text-\[62px\] {
-    font-size: 48px;
-  }
-
-  p.text-\[35px\] {
-    font-size: 26px;
-  }
-}
-
+/* ── Desktop-only elementlarni yashirish ── */
+#hamburger-btn     { display: none; }
+#bottom-nav        { display: none; }
+#mobile-menu       { display: none; }
+.mobile-search-bar { display: none; }
 
 /* 
-   1024px — Tablet landscape
-   */
-@media (max-width: 1024px) {
-
-  /* Navbar */
-  nav#navbar {
-    padding-left: 32px;
-    padding-right: 32px;
-    height: 70px;
-  }
-
-  nav#navbar .text-\[35px\] {
-    font-size: 26px;
-  }
-
-  nav#navbar .text-\[15px\] {
-    font-size: 13px;
-  }
-
-  nav#navbar .flex.items-center.gap-7,
-  nav#navbar .flex.items-center.gap-8 {
-    gap: 20px;
-  }
-
-  /* Hero */
-  #hero {
-    min-height: 700px;
-    padding-top: 70px;
-  }
-
-  #hero-mountains {
-    padding-top: 70px;
-  }
-
-  h1.text-\[80px\] {
-    font-size: 48px;
-    max-width: 100%;
-  }
-
-  /* Search bar */
-  .h-\[66px\] {
-    height: 54px;
-  }
-
-  /* Section padding */
-  section.px-\[132px\],
-  div.px-\[132px\],
-  footer.px-\[132px\] {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-
-  section.px-\[120px\] {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-
-  .relative.z-10.pt-11.px-\[132px\],
-  .pt-11.px-\[132px\] {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-
-  .relative.z-10.px-\[132px\],
-  .px-\[132px\].pb-10 {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-
-  /* Cards: 4 col → 2 col */
-  .grid.grid-cols-4 {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-
-  /* Cards: 3 col → 2 col */
-  .grid.grid-cols-3 {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-
-  /* Offers: 2 col → 1 col */
-  .grid.grid-cols-2 {
-    grid-template-columns: 1fr;
-  }
-
-  /* Community: 4 col → 2 col */
-  .grid.grid-cols-4.gap-6 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Plan trip */
-  .px-\[88px\] {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-
-  h2.text-\[62px\] {
-    font-size: 38px;
-  }
-
-  p.text-\[35px\] {
-    font-size: 20px;
-  }
-
-  /* App download section */
-  section .flex.items-end.gap-16 {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 32px;
-    padding-bottom: 40px;
-  }
-
-  /* Footer */
-  footer .flex.items-start.gap-16 {
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  footer .flex.flex-1.justify-between {
-    flex-wrap: wrap;
-    gap: 32px;
-  }
-
-  /* Hero carousel cards */
-  .carousel-track .flex-shrink-0 {
-    width: 260px !important;
-    height: 180px !important;
-  }
-
-  /* Property track cards */
-  #propertyTrack .flex-shrink-0 {
-    width: calc((100vw - 64px) / 2) !important;
-  }
-
-  /* Summer Bonanza card height */
-  .grid.grid-cols-3 .rounded-\[18px\].overflow-hidden[style*="height:608px"] {
-    height: 400px !important;
-  }
-
-  /* Plan trip height */
-  .relative.rounded-\[26px\] {
-    height: 320px !important;
-  }
-}
-
-
-/* 
-   768px — Tablet portrait
+   MOBILE  ≤ 768px
 */
 @media (max-width: 768px) {
 
-  /* Navbar — hamburger yashirish (hozircha sodda)*/
-  nav#navbar {
-    padding-left: 20px;
-    padding-right: 20px;
-    height: 64px;
+  /* ── BASE ── */
+  *, *::before, *::after { box-sizing: border-box; }
+
+  body {
+    overflow-x: hidden;
+    padding-bottom: 72px;
   }
 
-  nav#navbar .flex.items-center.gap-7,
-  nav#navbar .flex.items-center.gap-8 {
-    display: none;
+  /* ═══ NAVBAR ═══ */
+  #navbar {
+    height: 60px !important;
+    padding: 0 20px !important;
+    justify-content: space-between !important;
+    background: rgba(0,0,0,0.30) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
   }
 
-  /* Hero */
-  #hero {
-    min-height: 580px;
-    padding-top: 64px;
+  /* Desktop links yashirish */
+  #navbar > div { display: none !important; }
+
+  /* Logo markazda */
+  #navbar > span {
+    font-size: 22px !important;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
-  #hero-mountains {
-    padding-top: 64px;
-    min-height: 420px;
-  }
-
-  h1.text-\[80px\] {
-    font-size: 36px;
-  }
-
-  /* Search bar — stack */
-  .flex.items-center.max-w-\[1246px\].h-\[66px\] {
-    flex-direction: column;
-    height: auto;
-    padding: 12px;
-    gap: 10px;
-    border-radius: 16px;
-  }
-
-  .flex.items-center.max-w-\[1246px\].h-\[66px\] .w-px {
-    display: none;
-  }
-
-  .flex.items-center.max-w-\[1246px\].h-\[66px\] > div {
-    width: 100%;
-    padding-left: 8px;
-  }
-
-  .flex.items-center.max-w-\[1246px\].h-\[66px\] button {
-    width: 100%;
-    height: 44px;
-    border-radius: 12px;
-  }
-
-  /* Section padding */
-  section.px-\[132px\],
-  div.px-\[132px\],
-  footer.px-\[132px\] {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  section.px-\[120px\] {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .relative.z-10.pt-11.px-\[132px\],
-  .pt-11.px-\[132px\] {
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 24px;
-  }
-
-  .relative.z-10.px-\[132px\],
-  .px-\[132px\].pb-10 {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  /* Top categories — scroll */
-  .flex.items-center.justify-between.max-w-\[1246px\] {
-    overflow-x: auto;
-    justify-content: flex-start;
-    gap: 20px;
-    padding-bottom: 8px;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  .flex.items-center.justify-between.max-w-\[1246px\]::-webkit-scrollbar {
-    display: none;
-  }
-
-  .flex.items-center.justify-between.max-w-\[1246px\] > * {
-    flex: 0 0 auto;
-  }
-
-  /* Section headings */
-  h2.text-\[28px\],
-  h2.text-\[34px\] {
-    font-size: 22px;
-  }
-
-  /* Cards: all → 1 col */
-  .grid.grid-cols-4,
-  .grid.grid-cols-3,
-  .grid.grid-cols-2 {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  /* Community 4 col → 1 col */
-  .grid.grid-cols-4.gap-6 {
-    grid-template-columns: 1fr;
-  }
-
-  /* Offers card — column */
-  .flex.rounded-\[20px\].bg-white.overflow-hidden {
-    flex-direction: column;
-    height: auto !important;
-  }
-
-  .flex.rounded-\[20px\].bg-white.overflow-hidden .p-5 img {
-    width: 100% !important;
-    height: 200px !important;
-  }
-
-  /* Plan trip */
-  .relative.rounded-\[26px\] {
-    height: 260px !important;
-  }
-
-  .px-\[88px\] {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  h2.text-\[62px\] {
-    font-size: 28px;
-  }
-
-  p.text-\[35px\] {
-    font-size: 16px;
-  }
-
-  /* App section */
-  section .flex.items-end.gap-16 {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-    padding: 32px 20px;
-  }
-
-  section .flex.items-end.gap-16 h2.text-\[48px\] {
-    font-size: 28px;
-  }
-
-  /* Phone mockup */
-  .flex-shrink-0.w-\[220px\] {
-    width: 160px !important;
-  }
-
-  /* App store buttons */
-  section .flex.items-center.gap-4.flex-shrink-0 {
-    flex-direction: row;
+  /* Hamburger */
+  #hamburger-btn {
+    display: flex !important;
     align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    z-index: 60;
+    flex-shrink: 0;
   }
 
-  /* Footer */
-  footer .flex.items-start.gap-16 {
+  /* ═══ MOBILE MENU OVERLAY ═══ */
+  #mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(8,8,8,0.97);
+    z-index: 9999;
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
   }
 
-  footer .flex.flex-1.justify-between {
-    flex-direction: column;
-    gap: 24px;
+  #mobile-menu.open {
+    display: flex !important;
+    animation: mMenuIn 0.25s ease forwards;
   }
 
-  /* Summer Bonanza */
-  .grid.grid-cols-3 .rounded-\[18px\].overflow-hidden[style*="height:608px"] {
-    height: 300px !important;
+  @keyframes mMenuIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
-  /* Property track */
-  #propertyTrack .flex-shrink-0 {
-    width: calc(100vw - 40px) !important;
+  #mobile-menu .menu-close {
+    position: absolute;
+    top: 18px; right: 20px;
+    background: none; border: none;
+    color: white; font-size: 28px;
+    cursor: pointer; line-height: 1;
   }
 
-  /* Carousel cards */
-  .carousel-track .flex-shrink-0 {
-    width: 220px !important;
-    height: 150px !important;
+  #mobile-menu a {
+    color: white; text-decoration: none;
+    font-size: 30px; font-weight: 700;
+    padding: 14px 40px;
+    opacity: 0.85; transition: opacity 0.2s;
+    text-align: center; width: 100%;
   }
 
-  /* mountains hero title */
-  #hero-mountains h1 {
-    font-size: 36px;
-  }
-}
+  #mobile-menu a:last-of-type { color: #4d88ff; opacity: 1; }
+  #mobile-menu a:hover { opacity: 1; }
 
-
-/* 
-   480px — Mobil
-*/
-@media (max-width: 480px) {
-
-  /* Navbar */
-  nav#navbar {
-    padding-left: 16px;
-    padding-right: 16px;
-    height: 58px;
+  #mobile-menu .menu-divider {
+    width: 40px; height: 1px;
+    background: rgba(255,255,255,0.12);
+    margin: 4px 0;
   }
 
-  nav#navbar .text-\[35px\] {
-    font-size: 22px;
-  }
-
-  /* Hero */
+  /* ═══ HERO ═══ */
   #hero {
-    min-height: 480px;
-    padding-top: 58px;
+    min-height: 100svh !important;
   }
 
-  #hero-mountains {
-    padding-top: 58px;
-    min-height: 360px;
+  #hero > div.relative.z-10 {
+    padding-top: 60px !important;
   }
 
-  h1.text-\[80px\],
-  #hero-mountains h1 {
-    font-size: 28px;
+  /* All direct children divs inside hero content */
+  #hero > div.relative.z-10 > div {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  #hero h1 {
+    font-size: 36px !important;
+    line-height: 1.1 !important;
+    max-width: 100% !important;
+    margin-bottom: 16px !important;
+  }
+
+  /* Desktop search bar yashirish */
+  #hero > div.relative.z-10 > div > div.flex.items-center {
+    display: none !important;
+  }
+
+  /* ═══ MOBILE SEARCH BAR ═══ */
+  .mobile-search-bar {
+    display: flex !important;
+    flex-direction: column;
+    gap: 10px;
     margin-bottom: 20px;
+    width: 100%;
   }
 
-  /* Section padding */
-  section.px-\[132px\],
-  div.px-\[132px\],
-  footer.px-\[132px\],
-  section.px-\[120px\] {
-    padding-left: 16px;
-    padding-right: 16px;
+  .mobile-search-bar .msb-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 46px;
+    border-radius: 32px;
+    padding: 0 16px;
+    background: rgba(255,255,255,0.35);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+    border: 1px solid rgba(255,255,255,0.22);
   }
 
-  .relative.z-10.pt-11.px-\[132px\],
-  .pt-11.px-\[132px\],
-  .relative.z-10.px-\[132px\],
-  .px-\[132px\].pb-10 {
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-top: 20px;
+  .mobile-search-bar .msb-row i {
+    color: white; opacity: 0.85;
+    font-size: 14px; flex-shrink: 0;
   }
 
-  /* Search bar */
-  .flex.items-center.max-w-\[1246px\].h-\[66px\] {
-    padding: 10px;
-    gap: 8px;
+  .mobile-search-bar .msb-row input,
+  .mobile-search-bar .msb-row span {
+    color: white; font-size: 14px;
+    background: transparent; border: none; outline: none;
+    flex: 1;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
 
-  /* Section headings */
-  h2.text-\[28px\],
-  h2.text-\[34px\] {
-    font-size: 18px;
-    margin-bottom: 14px;
+  .mobile-search-bar .msb-row input::placeholder { color: rgba(255,255,255,0.7); }
+
+  .mobile-search-bar .msb-row-double { display: flex; gap: 8px; }
+  .mobile-search-bar .msb-row-double .msb-row { flex: 1; }
+
+  .mobile-search-bar .msb-btn {
+    height: 50px; border-radius: 32px;
+    background: #2659C3; color: white;
+    font-size: 16px; font-weight: 700;
+    border: none; cursor: pointer; width: 100%;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    transition: background 0.2s;
+  }
+  .mobile-search-bar .msb-btn:active { background: #1e4fa8; }
+
+  /* ═══ TOP CATEGORIES ═══ */
+  #hero .pb-7,
+  #hero-mountains .pb-10 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 
-  /* Cards */
-  .grid.grid-cols-4,
-  .grid.grid-cols-3,
-  .grid.grid-cols-2,
-  .grid.grid-cols-4.gap-6 {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  /* Card image heights */
-  .relative.h-\[263px\].rounded-\[12px\] {
-    height: 200px !important;
-  }
-
-  .relative.h-\[235px\].rounded-\[12px\] {
-    height: 180px !important;
-  }
-
-  /* Recently Viewed image */
-  .relative.rounded-\[12px\].overflow-hidden[style*="height:221px"] {
-    height: 180px !important;
-  }
-
-  /* Summer Bonanza */
-  .rounded-\[18px\].overflow-hidden[style*="height:608px"] {
-    height: 260px !important;
-  }
-
-  /* Top categories font */
-  .text-\[11px\].text-white {
-    font-size: 10px;
-  }
-
-  /* Plan trip */
-  .relative.rounded-\[26px\] {
-    height: 200px !important;
-  }
-
-  h2.text-\[62px\] {
-    font-size: 22px;
-  }
-
-  p.text-\[35px\] {
-    font-size: 14px;
-  }
-
-  .px-\[88px\] {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  /* App section */
-  section .flex.items-end.gap-16 h2.text-\[48px\] {
-    font-size: 24px;
-  }
-
-  .flex-shrink-0.w-\[220px\] {
-    width: 130px !important;
-  }
-
-  /* Offers card image */
-  .flex.rounded-\[20px\].bg-white.overflow-hidden .p-5 img {
-    height: 160px !important;
-  }
-
-  /* Footer */
-  footer {
-    padding: 32px 16px;
-  }
-
-  footer .text-\[28px\] {
-    font-size: 22px;
-  }
-
-  /* Carousel cards */
-  .carousel-track .flex-shrink-0 {
-    width: 180px !important;
-    height: 130px !important;
-  }
-
-  #propertyTrack .flex-shrink-0 {
-    width: calc(100vw - 32px) !important;
-  }
-
-  /* Recently Viewed card content font */
-  [style*="font-size:26.57px"] {
+  /* Heading */
+  #hero .pb-7 p,
+  #hero-mountains .pb-10 p {
     font-size: 18px !important;
   }
 
-  [style*="font-size:17.71px"] {
+  /* Categories row → horizontal scroll */
+  #hero .flex.items-center.justify-between,
+  #hero-mountains .flex.items-center.justify-between {
+    overflow-x: auto !important;
+    justify-content: flex-start !important;
+    gap: 4px !important;
+    flex-wrap: nowrap !important;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+  }
+
+  #hero .flex.items-center.justify-between::-webkit-scrollbar,
+  #hero-mountains .flex.items-center.justify-between::-webkit-scrollbar {
+    display: none;
+  }
+
+  #hero .flex.items-center.justify-between > *,
+  #hero-mountains .flex.items-center.justify-between > * {
+    flex: 0 0 auto !important;
+    min-width: 62px !important;
+    padding: 0 6px !important;
+  }
+
+  /* Top Vacation heading */
+  #hero .pb-4 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  #hero .pb-4 h2 { font-size: 20px !important; }
+
+  /* ═══ DESTINATION CAROUSEL ═══ */
+  .carousel-wrapper {
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
+
+  .carousel-track { gap: 12px !important; }
+
+  .carousel-track > div {
+    width: 200px !important;
+    height: 138px !important;
+  }
+
+  .carousel-track > div:first-child {
+    margin-left: 16px !important;
+  }
+
+  /* ═══ ALL SECTIONS — padding ═══ */
+  section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  section > h2 {
+    font-size: 20px !important;
+    margin-bottom: 14px !important;
+  }
+
+  /* ═══ OFFERS ═══ */
+  /* Grid: 2 ustun → 1 ustun */
+  .offers-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Offer karta — gorizontal → vertikal */
+  .offer-card {
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: auto !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 18px rgba(158,158,158,0.25) !important;
+  }
+
+  /* Rasm qismi */
+  .offer-card > div:first-child {
+    padding: 12px 12px 0 12px !important;
+    width: 100% !important;
+    height: auto !important;
+    flex-shrink: 0 !important;
+  }
+
+  .offer-card > div:first-child img {
+    width: 100% !important;
+    height: 170px !important;
+    border-radius: 12px !important;
+    object-fit: cover !important;
+  }
+
+  /* Matn qismi */
+  .offer-card > div:last-child {
+    padding: 14px 16px 18px !important;
+    flex: 1 !important;
+  }
+
+  .offer-card h3 {
+    font-size: 16px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .offer-card p { font-size: 13px !important; }
+
+  .offer-card button {
+    margin-top: 12px !important;
+    padding: 10px 20px !important;
+    font-size: 14px !important;
+  }
+
+  /* Fallback — agar offer-card class yo'q bo'lsa (inline style bo'yicha) */
+  div[style*="height:280px"] {
+    flex-direction: column !important;
+    height: auto !important;
+  }
+
+  div[style*="height:280px"] > div:first-child {
+    padding: 12px 12px 0 !important;
+    height: auto !important;
+  }
+
+  div[style*="height:280px"] > div:first-child img {
+    width: 100% !important;
+    height: 170px !important;
+    border-radius: 12px !important;
+    object-fit: cover !important;
+  }
+
+  div[style*="height:280px"] > div.flex.flex-col {
+    padding: 14px 16px 18px !important;
+  }
+
+  /* ═══ BROWSE BY PROPERTY ═══ */
+  #propertyWrapper {
+    overflow-x: auto !important;
+    cursor: grab;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-left: 0 !important;
+  }
+
+  #propertyWrapper::-webkit-scrollbar { display: none; }
+
+  #propertyTrack {
+    width: max-content !important;
+    transform: none !important;
+    animation: none !important;
+    padding: 0 16px !important;
+    gap: 12px !important;
+  }
+
+  #propertyTrack > div {
+    width: 138px !important;
+    height: 106px !important;
+    flex-shrink: 0 !important;
+  }
+
+  #propertyTrack span { font-size: 12px !important; }
+
+  /* ═══ PLAN YOUR TRIP ═══ */
+  section .relative.rounded-\[26px\] {
+    height: 230px !important;
+    border-radius: 16px !important;
+    overflow: hidden;
+  }
+
+  section .relative.rounded-\[26px\] > div.relative.z-10 {
+    padding: 22px !important;
+    justify-content: center;
+  }
+
+  section .relative.rounded-\[26px\] h2 {
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 8px !important;
+    max-width: 100% !important;
+  }
+
+  section .relative.rounded-\[26px\] p {
+    font-size: 14px !important;
+  }
+
+  /* ═══ COMMUNITY ═══ */
+  section .grid.grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  section .grid.grid-cols-4 .h-\[220px\] {
+    height: 128px !important;
+  }
+
+  /* ═══ APP DOWNLOAD ═══ */
+  section[style*="linear-gradient(135deg"] {
+    min-height: auto !important;
+  }
+
+  /* Ichki flex konteyner — column qil */
+  section[style*="linear-gradient(135deg"] > div.relative.z-10 {
+    flex-direction: column !important;
+    padding: 36px 16px 32px !important;
+    gap: 0 !important;
+    min-height: auto !important;
+    align-items: flex-start !important;
+  }
+
+  /* Telefon mockup — yashir */
+  section[style*="linear-gradient(135deg"] > div.relative.z-10 > div:first-child {
+    display: none !important;
+  }
+
+  /* O'rta matn blok */
+  section[style*="linear-gradient(135deg"] > div.relative.z-10 > div.flex-1 {
+    max-width: 100% !important;
+    padding-top: 0 !important;
+    width: 100% !important;
+  }
+
+  section[style*="linear-gradient(135deg"] h2 {
+    font-size: 26px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 10px !important;
+  }
+
+  section[style*="linear-gradient(135deg"] p {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Tabs (Mobile/Email tugmalari) */
+  section[style*="linear-gradient(135deg"] > div.relative.z-10 > div.flex-1 > div:first-child {
+    margin-bottom: 10px !important;
+  }
+
+  /* Phone input pill */
+  section[style*="linear-gradient(135deg"] > div.relative.z-10 > div.flex-1 > div[style*="max-width: 500px"],
+  section[style*="linear-gradient(135deg"] > div.relative.z-10 > div.flex-1 > div[style*="max-width:500px"] {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* "or" + Store buttons — pastga, row ko'rinishida */
+  section[style*="linear-gradient(135deg"] > div.relative.z-10 > div:last-child {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    padding-top: 20px !important;
+    padding-bottom: 0 !important;
+    gap: 14px !important;
+    width: 100% !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* "or" vertikal divider → horizontal mini */
+  section[style*="linear-gradient(135deg"] > div.relative.z-10 > div:last-child > div:first-child {
+    flex-direction: row !important;
+    align-items: center !important;
+    height: auto !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+    width: auto !important;
+  }
+
+  section[style*="linear-gradient(135deg"] > div.relative.z-10 > div:last-child > div:first-child > div {
+    width: 30px !important;
+    height: 1px !important;
+    flex: none !important;
+  }
+
+  /* Store buttons wrapper */
+  section[style*="linear-gradient(135deg"] > div.relative.z-10 > div:last-child > div:last-child {
+    flex: 1 !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  section[style*="linear-gradient(135deg"] > div.relative.z-10 > div:last-child > div:last-child a {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  section[style*="linear-gradient(135deg"] > div.relative.z-10 > div:last-child > div:last-child img {
+    height: 48px !important;
+    width: 100% !important;
+    object-fit: contain !important;
+    border-radius: 10px !important;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 32px 16px 32px !important;
+  }
+
+  /* Asosiy flex wrapper → column */
+  footer > div {
+    flex-direction: column !important;
+    gap: 24px !important;
+    align-items: flex-start !important;
+  }
+
+  /* Logo wrapper */
+  footer > div > div:first-child {
+    min-width: auto !important;
+  }
+
+  /* Kolonnalar wrapper → column */
+  footer > div > div:last-child {
+    flex-direction: column !important;
+    gap: 24px !important;
+    width: 100% !important;
+  }
+
+  /* Har bir footer kolonnasi */
+  footer > div > div:last-child > div {
+    gap: 12px !important;
+  }
+
+  /* Logo font */
+  footer p[style*="font-size:28px"],
+  footer p[class*="text-[28px]"] {
+    font-size: 20px !important;
+  }
+
+  /* Footer links */
+  footer p[class*="text-[13px]"],
+  footer p[style*="font-size:13px"] {
     font-size: 13px !important;
   }
 
-  /* Card min-height reset */
-  [style*="min-height:318px"] {
-    min-height: unset !important;
+  /* Helmet KOD tugmasi */
+  footer button {
+    font-size: 12px !important;
+    padding: 8px 14px !important;
   }
+
+  /* Social ikonlar */
+  footer .flex.items-center[class*="gap-[22px]"],
+  footer .flex.items-center[class*="gap-"] {
+    gap: 20px !important;
+    margin-top: 8px !important;
+  }
+
+  footer .flex.items-center a i {
+    font-size: 22px !important;
+  }
+
+  /* ═══════════════════════════════════════
+     MOUNTAINS PAGE
+  ═══════════════════════════════════════ */
+
+  #hero-mountains {
+    min-height: auto !important;
+    padding-top: 60px !important;
+  }
+
+  #hero-mountains > div.relative.z-10 > div {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Desktop search bar */
+  #hero-mountains .flex.items-center.max-w-\[1246px\] {
+    display: none !important;
+  }
+
+  #hero-mountains h1 {
+    font-size: 36px !important;
+    line-height: 1.1 !important;
+    max-width: 100% !important;
+    margin-bottom: 16px !important;
+  }
+
+  /* Mountains grids — 2 ustun */
+  section .grid.grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  /* Recently viewed — 1 ustun */
+  section .grid.grid-cols-3 {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  /* Card image heights */
+  section .h-\[263px\],
+  section .h-\[235px\] {
+    height: 155px !important;
+  }
+
+  /* Recently viewed card images */
+  section .grid.grid-cols-3 .rounded-\[12px\].overflow-hidden {
+    height: 175px !important;
+    margin-bottom: 14px !important;
+  }
+
+  /* Recently viewed text sizes */
+  [style*="font-size:26.57px"] { font-size: 18px !important; }
+  [style*="font-size:17.71px"] { font-size: 13px !important; }
+
+  /* Summer Bonanza card */
+  section .grid.grid-cols-3 > div:last-child {
+    height: 220px !important;
+  }
+
+  /* Card inner padding */
+  section .grid.grid-cols-4 > div,
+  section .grid.grid-cols-3 > div {
+    padding: 8px !important;
+  }
+
+  section .grid.grid-cols-4 > div p { font-size: 12px !important; }
+
+  /* BOTTOM NAV  */
+  #bottom-nav {
+    display: flex !important;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: 64px;
+    background: white;
+    border-top: 1px solid rgba(0,0,0,0.07);
+    z-index: 1000;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 8px;
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.09);
+  }
+
+  #bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    text-decoration: none;
+    flex: 1;
+    padding: 6px 0;
+  }
+
+  #bottom-nav a i {
+    font-size: 19px;
+    color: #bbb;
+    transition: color 0.15s;
+  }
+
+  #bottom-nav a span {
+    font-size: 10px;
+    color: #bbb;
+    font-weight: 500;
+  }
+
+  #bottom-nav a.active i,
+  #bottom-nav a.active span {
+    color: #2659C3;
+  }
+
 }
